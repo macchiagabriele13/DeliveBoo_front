@@ -100,5 +100,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+@use '../styles/general.scss';
+@import '../styles/_variables';
 </style>
