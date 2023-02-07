@@ -1,0 +1,104 @@
+<script>
+import axios from 'axios'
+import PlateCard from './PlateCard.vue'
+
+export default {
+    components: {
+
+        PlateCard,
+    },
+    name: 'PlateList',
+    data() {
+        return {
+            plates: [],
+            base_api_url: 'http://localhost:8000',
+            error: null,
+            loading: true,
+        }
+    },
+    methods: {
+        getPlate(url) {
+            axios
+                .get(url)
+                .then(response => {
+                    console.log(response.data.results);
+                    this.plates = response.data.results;
+                    this.loading = false
+                })
+                .catch(error => {
+                    console.error(error)
+                    this.error = error.message
+
+                })
+        },
+        getImagePath(path) {
+            console.log(path);
+            if (path) {
+                return this.base_api_url + '/storage/' + path
+            }
+            return '/img/Food-placeholder.jpg'
+        },
+        prevPage(url) {
+            console.log(url)
+            this.getPlate(url)
+        },
+        nextPage(url) {
+            console.log(url)
+            this.getPlate(url)
+        }
+
+    },
+    mounted() {
+        this.getPlate(this.base_api_url + '/api/plates');
+    }
+}
+</script>
+
+<template>
+    <section class="vue-home pt-5">
+        <div class="container">
+            <div v-if="plates && !loading">
+                <div class="row row-cols-1 row-cols-sm-3 g-4">
+
+
+
+                    <PlateCard :plate="plate" v-for="plate in plates.data"></PlateCard>
+
+
+
+                </div>
+                <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
+                    <ul class="pagination    ">
+                        <li class="page-item" v-if="plates.prev_page_url" @click="prevPage(plates.prev_page_url)">
+                            <a class="page-link" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
+                            plates.current_page
+                        }}</a></li>
+
+                        <li class="page-item" v-if="plates.next_page_url" @click="nextPage(plates.next_page_url)">
+                            <a class="page-link" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div v-else>
+                <p> No plates here </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+</template>
+
+<style lang="scss" scoped>
+
+</style>
