@@ -5,6 +5,8 @@ import PlatesView from './views/PlatesView.vue'
 import SinglePlateView from './views/SinglePlateView.vue'
 import ContactsView from './views/ContactsView.vue'
 import NotFoundView from './views/NotFoundView.vue'
+import SingleRestaurantView from './views/SingleRestaurantView.vue'
+import RestaurantsView from './views/RestaurantsView.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -28,7 +30,7 @@ const router = createRouter({
         },
 
         {
-            path: '/projects/:id',
+            path: '/plates/:id',
             name: 'single-plate',
             component: SinglePlateView
         },
@@ -38,6 +40,18 @@ const router = createRouter({
             name: 'not-found',
             component: NotFoundView
         },
+        {
+            path: '/restaurants',
+            name: 'restaurants',
+            component: RestaurantsView
+        },
+
+        {
+            path: '/restaurants/:id',
+            name: 'single-restaurant',
+            component: SingleRestaurantView
+        },
+
 
 
     ]
