@@ -95,33 +95,37 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/general.scss';
+@import '../styles/_variables';
+
 .bg_orange {
-    background-color: orange;
+    background-color: $primary;
 }
 
 .hover_red_mail {
-    color: black;
+    color: $dark;
 }
 
 .hover_red_mail:hover {
-    color: red;
+    color: $secondary;
 }
 
 .social_icons {
     a {
-        color: black;
+        color: $dark;
+        display: contents;
     }
 
     .wrap_circle_icon {
-        background-color: white;
+        background-color: $light;
         height: 35px;
         width: 35px;
 
         &:hover {
-            background-color: red;
+            background-color: $secondary;
 
             a {
-                color: white;
+                color: $light;
             }
         }
     }

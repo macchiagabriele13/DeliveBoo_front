@@ -94,13 +94,16 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/general.scss';
+@import '../styles/_variables';
+
 a.nav-link.active {
     color: red;
 }
 
 a.nav-link:hover {
     color: red;
-    border-bottom: 3px solid red;
+    box-shadow: inset 0 -3px 0 0 red;
 }
 
 a.nav-link {
