@@ -24,9 +24,14 @@ export default {
                                 restaurant</small>
                         </div>
                         <div class="button_wrapper">
-                            <img height="150" src="../../public/img/pacman.png" alt="">
-                            <span class="button_clickme">
-                                <a name="" id="" class="btn btn-danger ms-4 rounded-circle p-3" href="#"
+                            <div class="pacman d-inline-block">
+                                <div class="pacman__eye"></div>
+                                <div class="pacman__mouth"></div>
+                                <div class="pacman__food"></div>
+                            </div>
+                            <!-- <img height="150" src="../../public/img/pacman.png" alt=""> -->
+                            <span class="button_clickme ms-4 mt-4">
+                                <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
                                     role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
                             </span>
                         </div>
@@ -97,6 +102,49 @@ h1 {
     font-family: 'PacFont', sans-serif;
 }
 
+.pacman {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f2d648;
+    position: relative;
+    margin-top: 20px;
+}
+
+.pacman__eye {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 20px;
+    right: 40px;
+    background: #333333;
+}
+
+.pacman__mouth {
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    animation-name: eat;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+
+.pacman__food {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    top: 40%;
+    left: 120px;
+    animation-name: food;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+
 .card:hover {
     box-shadow: 1px 1px 50px rgba(255, 166, 0, 0.605);
     cursor: pointer;
@@ -114,5 +162,43 @@ h1 {
     background-image: url('../../public/img/hamburger.png');
     background-repeat: no-repeat;
     background-position: 150% 50%;
+}
+
+//Pac-Man Animation//
+
+@keyframes eat {
+    0% {
+        clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+
+    25% {
+        clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+    }
+
+    50% {
+        clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+    }
+
+    75% {
+        clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+    }
+
+    100% {
+        clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+}
+
+//Pac-Man Food Animation//
+
+@keyframes food {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
 }
 </style>
