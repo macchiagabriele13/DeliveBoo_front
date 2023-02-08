@@ -11,7 +11,7 @@ export default {
             <div class="container-fluid bg_orange d-flex align-items-center">
                 <div class="home_text mt-3">
                     <div class="container w-75">
-                        <h1>Titolo HomePage</h1>
+                        <h1>199 Pac-Food 199</h1>
                         <h5 class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
                             enim
                             temporibus
@@ -86,10 +86,15 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/general.scss';
+@import url('https://fonts.cdnfonts.com/css/pac-font');
 
 
 .bg_orange {
     background-color: orange;
+}
+
+h1 {
+    font-family: 'PacFont', sans-serif;
 }
 
 .card:hover {
