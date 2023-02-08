@@ -11,7 +11,7 @@ export default {
             <div class="container-fluid bg_orange d-flex align-items-center">
                 <div class="home_text mt-3">
                     <div class="container w-75">
-                        <h1>199 Pac-Food 199</h1>
+                        <h1>199 Pac <br> Fc-d 199</h1>
                         <h5 class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
                             enim
                             temporibus
@@ -23,6 +23,7 @@ export default {
                             <small id="searchRestarauntHelper" class="form-text text-muted">Find your favorite
                                 restaurant</small>
                         </div>
+                        <!-- pac-man -->
                         <div class="button_wrapper">
                             <div class="pacman d-inline-block">
                                 <div class="pacman__eye"></div>
@@ -30,10 +31,10 @@ export default {
                                 <div class="pacman__food"></div>
                             </div>
                             <!-- <img height="150" src="../../public/img/pacman.png" alt=""> -->
-                            <span class="button_clickme ms-4 mt-4">
+                            <!-- <span class="button_clickme ms-4 mt-4">
                                 <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
                                     role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                 </div>
@@ -103,12 +104,17 @@ h1 {
 }
 
 .pacman {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: #f2d648;
     position: relative;
     margin-top: 20px;
+    bottom: 15%;
+    position: absolute;
+    animation: linear infinite;
+    animation-name: run;
+    animation-duration: 5s;
 }
 
 .pacman__eye {
@@ -164,7 +170,7 @@ h1 {
     background-position: 150% 50%;
 }
 
-//Pac-Man Animation//
+//Pac-Man Mouth Animation//
 
 @keyframes eat {
     0% {
@@ -185,6 +191,32 @@ h1 {
 
     100% {
         clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+}
+
+//Pac-Man Move Animation//
+
+@keyframes run {
+    0% {
+        left: 0;
+    }
+
+    48% {
+        -webkit-transform: rotateY(0deg);
+    }
+
+    50% {
+        left: 40%;
+        -webkit-transform: rotateY(180deg);
+    }
+
+    98% {
+        -webkit-transform: rotateY(180deg);
+    }
+
+    100% {
+        left: 0;
+        -webkit-transform: rotateY(0deg);
     }
 }
 
