@@ -17,7 +17,7 @@ export default {
                             temporibus
                             laudantium mollitia voluptates possimus neque magni repellat eligendi quos!</h5>
                         <div class="mb-1">
-                            <input type="search" class="form-control rounded-pill border-0 w-50" name="searchRestaurant"
+                            <input type="search" class="form-control rounded-pill border-0 w-75" name="searchRestaurant"
                                 id="searchRestaurant" aria-describedby="searchRestaurantHelper"
                                 placeholder="Text here a restaurant name">
                             <small id="searchRestarauntHelper" class="form-text text-muted">Find your favorite
@@ -33,7 +33,7 @@ export default {
                     </div>
                 </div>
                 <div class="image py-3">
-                    <img height="600" src="../../public/img/deliveboo-home-image.png" alt="">
+                    <img width="780" height="500" src="../../public/img/pac-burger.png" alt="">
                 </div>
             </div>
         </section>
