@@ -115,6 +115,7 @@ export default {
         </div>
     </div>
     <!-- <section class="vue-home pt-5">
+
         <div class="container">
             <div v-if="restaurants && !loading">
                 <div class="row row-cols-1 row-cols-sm-3 g-4">
