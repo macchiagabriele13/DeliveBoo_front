@@ -19,7 +19,7 @@ export default {
         </div>
     </section>
     <!-- info contatti -->
-    <section id="contacts_info">
+    <section class="bg_contacts" id="contacts_info">
         <div
             class="container d-flex justify-content-center mt_custom flex-column align-items-center border-bottom border-2 w-75">
             <!-- assistenza ordini online -->
@@ -181,6 +181,12 @@ export default {
 <style lang="scss" scoped>
 .bg_orange {
     background-color: orange;
+}
+
+.bg_contacts {
+    background-image: url('../../public/img/contact_layout_bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .col-3:hover,

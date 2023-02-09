@@ -6,7 +6,7 @@ export default {
 
 <template>
     <!-- footer -->
-    <footer class="bg-warning">
+    <footer class="bg_footer">
         <section class="border-bottom border-dark border-1" id="footer_top">
             <div class="container">
                 <div class="row text-center">
@@ -98,8 +98,10 @@ export default {
 @use '../styles/general.scss';
 @import '../styles/_variables';
 
-.bg_orange {
-    background-color: $primary;
+.bg_footer {
+    background-image: url('../../public/img/footer_bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hover_red_mail {
