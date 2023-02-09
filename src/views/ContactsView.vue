@@ -9,6 +9,7 @@ export default {
 </script>
 
 <template>
+    <!-- banner -->
     <section id="banner_contacts">
         <div class="container-fluid bg_orange">
             <div class="container d-flex align-items-center justify-content-center justify-content-around">
@@ -17,6 +18,7 @@ export default {
             </div>
         </div>
     </section>
+    <!-- info contatti -->
     <section id="contacts_info">
         <div
             class="container d-flex justify-content-center mt_custom flex-column align-items-center border-bottom border-2 w-75">
@@ -108,47 +110,71 @@ export default {
         </div>
 
     </section>
-    <div class="container mt-5 pt-5">
-        <h1 class="text-uppercase">Contacts</h1>
+    <!-- form contatti -->
+    <section id="contacts_form">
+        <div class="container mt-5 pt-5 w-75">
+            <div class="row">
+                <h2 class="mb-5">Contattaci</h2>
+                <div class="col">
+                    <div class="form form_bg p-5 rounded-4 mb-4">
 
-        <div v-if="success" class="alert alert-success" role="alert">
-            Messaggio inviato con successo!
+                        <div v-if="success" class="alert alert-success" role="alert">
+                            Messaggio inviato con successo!
+                        </div>
+
+                        <form>
+                            <div class="mb-5">
+                                <input type="text" name="name" id="name" v-model="name" class="form-control p-3"
+                                    placeholder="Nome" aria-describedby="fullNameHelper">
+                                <!-- <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
+                    {{ error }}
+                </p> -->
+                            </div>
+                            <div class="mb-5">
+                                <input type="email" name="email" id="email" v-model="email" class="form-control p-3"
+                                    placeholder="Email" aria-describedby="emailHelper">
+                                <!-- <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
+                    {{ error }}
+                </p> -->
+                            </div>
+                            <div class="mb-5">
+                                <input type="text" name="phone" id="phone" v-model="phone" class="form-control p-3"
+                                    placeholder="Numero di cellulare" aria-describedby="phoneHelper">
+                                <!-- <p v-for="(error) in errors.phone" class="alert alert-danger mt-2">
+                    {{ error }}
+                </p> -->
+                            </div>
+                            <div class="mb-5">
+                                <textarea class="form-control p-3" name="message" id="message" v-model="message"
+                                    rows="5" placeholder="Messaggio"></textarea>
+                                <!-- <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
+                    {{ error }}
+                </p> -->
+                            </div>
+
+                            <button type="submit" class="btn btn-dark btn-lg rounded-pill border-0 padding_custom">
+                                Invia
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="delivery_time">
+                        <div class="card text-bg-light">
+                            <img src="../../public/img/delivery-time-contacts.webp" class="card-img" alt="...">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <form>
-            <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" name="name" id="name" v-model="name" class="form-control" placeholder="full name"
-                    aria-describedby="fullNameHelper">
-                <!-- <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p> -->
-                <small id="fullNameHelper" class="text-muted">Add your full name</small>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" v-model="email" class="form-control"
-                    placeholder="name@example.com" aria-describedby="emailHelper">
-                <!-- <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p> -->
-                <small id="emailHelper" class="text-muted">Add your email address</small>
-            </div>
-
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" name="message" id="message" v-model="message" rows="5"
-                    placeholder="type here..."></textarea>
-                <!-- <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p> -->
-            </div>
-
-            <button type="submit" class="btn btn-primary">
-                Contact
-            </button>
-        </form>
-    </div>
+    </section>
 
 </template>
 
@@ -165,12 +191,25 @@ export default {
     }
 }
 
+.form_bg {
+    background-image: url('../../public/img/form_bg.webp');
+}
+
+.btn.btn:hover {
+    background-color: red;
+
+}
+
 .fs_custom {
     font-size: 4rem;
 }
 
 .mt_custom {
     margin-top: 6rem;
+}
+
+.padding_custom {
+    padding: 1rem 14rem;
 }
 
 p {
