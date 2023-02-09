@@ -158,21 +158,33 @@ export default {
                         </form>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col delivery">
                     <div class="delivery_time">
                         <div class="card text-bg-light">
                             <img src="../../public/img/delivery-time-contacts.webp" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to
-                                    additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                            <div
+                                class="card-img-overlay d-flex justify-content-center align-items-start flex-column w-50">
+                                <h2 class="card-title">Tempo di spedizione</h2>
+                                <p class="card-text border-bottom border-2">Noi trasportiamo il tuo cibo entro 30
+                                    minuti.</p>
+                                <h6>Lunedì - Sabato</h6>
+                                <p class="card-text"><small>9am - 11pm</small></p>
+                                <h6>Domenica</h6>
+                                <p class="card-text"><small>11am - 7pm</small></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="map">
+        <div class="google_map d-flex justify-content-center mt-4 mb-5">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190029.01773433204!2d12.395913405746331!3d41.90998597310972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma%20RM!5e0!3m2!1sit!2sit!4v1675980617138!5m2!1sit!2sit"
+                width="1150" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
