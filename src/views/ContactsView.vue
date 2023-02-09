@@ -17,6 +17,59 @@ export default {
             </div>
         </div>
     </section>
+    <section id="contacts_info">
+        <div
+            class="container d-flex justify-content-center mt_custom flex-column align-items-center border-bottom border-2 w-75">
+            <!-- assistenza ordini online -->
+            <div class="row">
+                <h2>Assistenza ordini</h2>
+                <div class="col-4 border-end border-2 mt-3 p-3 mb-5">
+                    <div class="online_order_number">
+                        <p>Chiamaci</p>
+                        <h5>0000-123-456789</h5>
+                    </div>
+                </div>
+                <div class="col-4 ms-4">
+                    <div class="online_order_mail mt-3 p-3 mb-5">
+                        <p>Inviaci una mail</p>
+                        <h5>info@example.com</h5>
+                    </div>
+                </div>
+                <div class="col-3 ms-4">
+                    <div class="online_order_mail invisible">
+                        <p>Noi siamo qui</p>
+                        <h5>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="container d-flex justify-content-center mt_custom flex-column align-items-center border-bottom border-2 w-75">
+            <!-- ritiro in negozio -->
+            <div class="row">
+                <h2>Ritiro in negozio</h2>
+                <div class="col-4 border-end border-2 mt-3 p-3 mb-5">
+                    <div class="store_pickup_number">
+                        <p>Chiamaci</p>
+                        <h5>0000-123-456789</h5>
+                    </div>
+                </div>
+                <div class="col-4 ms-4 border-end border-2 mt-3 p-3 mb-5">
+                    <div class="store_pickup_mail">
+                        <p>Inviaci una mail</p>
+                        <h5>info@example.com</h5>
+                    </div>
+                </div>
+                <div class="col-3 ms-4">
+                    <div class="store_pickup_address mt-3 p-3 mb-5">
+                        <p>Noi siamo qui</p>
+                        <h5>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <div class="container mt-5 pt-5">
         <h1 class="text-uppercase">Contacts</h1>
 
@@ -68,5 +121,13 @@ export default {
 
 .fs_custom {
     font-size: 4rem;
+}
+
+.mt_custom {
+    margin-top: 6rem;
+}
+
+p {
+    font-size: 1rem;
 }
 </style>
