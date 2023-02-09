@@ -9,6 +9,14 @@ export default {
 </script>
 
 <template>
+    <section id="banner_contacts">
+        <div class="container-fluid bg_orange">
+            <div class="container d-flex align-items-center justify-content-center justify-content-around">
+                <h1 class="fs_custom">Contatti</h1>
+                <img height="400" src="../../public/img/pac-man-contacts.png" alt="">
+            </div>
+        </div>
+    </section>
     <div class="container mt-5 pt-5">
         <h1 class="text-uppercase">Contacts</h1>
 
@@ -54,5 +62,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.bg_orange {
+    background-color: orange;
+}
 
+.fs_custom {
+    font-size: 4rem;
+}
 </style>
