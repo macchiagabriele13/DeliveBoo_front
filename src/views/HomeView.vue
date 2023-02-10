@@ -48,42 +48,16 @@ export default {
             <div class="container">
                 <div class="row mt-4 mb-4">
                     <div class="col d-flex">
-                        <div class="card border border-warning rounded-3 text-center">
-                            <img class="img-fluid rounded-3 opacity-75" width="400" src="../../public/img/giappo.jpg"
-                                alt="">
-                            <h5 class="index_restaurant">Ristorante giapponese</h5>
-                        </div>
-                        <div class="card border border-warning rounded-3 text-center mx-3">
-                            <img class="img-fluid rounded-3 opacity-75" width="400" src="../../public/img/giappo.jpg"
-                                alt="">
-                            <h5 class="index_restaurant">Ristorante giapponese</h5>
-                        </div>
-                        <div class="card border border-warning rounded-3 text-center">
-                            <img class="img-fluid rounded-3 opacity-75" width="400" src="../../public/img/giappo.jpg"
-                                alt="">
-                            <h5 class="index_restaurant">Ristorante giapponese</h5>
+                        <div class="card">
+                            <img src="../../public/img/giappo.jpg" alt="restaurant_image" class="image"
+                                style="width:100%">
+                            <div class="middle">
+                                <div class="text">Ristorante Giapponese</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4 mb-4">
-                    <div class="col d-flex">
-                        <div class="card border border-warning rounded-3 text-center">
-                            <img class="img-fluid rounded-3 opacity-75" width="400" src="../../public/img/giappo.jpg"
-                                alt="">
-                            <h5 class="index_restaurant">Ristorante giapponese</h5>
-                        </div>
-                        <div class="card border border-warning rounded-3 text-center mx-3">
-                            <img class="img-fluid rounded-3 opacity-75" width="400" src="../../public/img/giappo.jpg"
-                                alt="">
-                            <h5 class="index_restaurant">Ristorante giapponese</h5>
-                        </div>
-                        <div class="card border border-warning rounded-3 text-center">
-                            <img class="img-fluid rounded-3 opacity-75" width="400" src="../../public/img/giappo.jpg"
-                                alt="">
-                            <h5 class="index_restaurant">Ristorante giapponese</h5>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
         </section>
@@ -92,12 +66,32 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/general.scss';
+
+@import '../styles/_variables';
 @import url('https://fonts.cdnfonts.com/css/pac-font');
 
 
 .bg_orange {
-    background-color: orange;
+    background-color: $primary;
 }
+
+.card {
+    box-sizing: border-box;
+    width: 250px;
+    height: 190px;
+    border: 1px solid $light;
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+      cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    position: relative;
+    }
 
 h1 {
     font-family: 'PacFont', sans-serif;
@@ -151,23 +145,62 @@ h1 {
     animation-iteration-count: infinite;
 }
 
+
 .card:hover {
-    box-shadow: 1px 1px 50px rgba(255, 166, 0, 0.605);
-    cursor: pointer;
+    background: rgb(250 188 47 / 50%);
+    border: 1px solid rgb(245 166 6 / 50%);
+    transform: scale(1.05);
+    box-shadow: 12px 17px 51px rgb(250 188 47 / 50%);
 }
 
 
-.index_restaurant {
-    z-index: 2;
+.card:hover>p {
+    display: block;
+    color: $secondary;
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+.image {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 17px;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
     position: absolute;
-    left: 80px;
-    bottom: 180px
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-#restaurant_cards {
-    background-image: url('../../public/img/hamburger.png');
-    background-repeat: no-repeat;
-    background-position: 150% 50%;
+.card:hover .image {
+    opacity: 0.3;
+}
+
+.card:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: $light;
+    color: $secondary;
+    font-size: 16px;
+    padding: 16px 32px;
+    display: block;
+    transform: scale(1.05);
 }
 
 //Pac-Man Mouth Animation//
