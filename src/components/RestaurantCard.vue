@@ -48,7 +48,8 @@ export default {
                         <h3 class="m-0">Tipologia :</h3>
                         <span v-for="tipo in restaurant.types">{{ tipo.name }}</span>
                     </div>
-                    <a class="btn btn-orange" href="#">Read More</a>
+                    <router-link class="btn btn-orange"
+                        :to="{ name: 'single-restaurant', params: { slug: restaurant.slug } }">Read More</router-link>
                 </div>
             </div>
         </div>

@@ -30,13 +30,12 @@ export default {
                             <a name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2"
                                 href="#" role="button">Add to
                                 Cart</a>
-                            <!-- <router-link :to="{ name: 'single-plate', params: { slug: plate.slug } }">Read
-                    More</router-link> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <PlateList />
     </section>
 </template>
 
