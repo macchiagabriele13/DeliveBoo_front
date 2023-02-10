@@ -54,19 +54,16 @@ export default {
     font-family: $font_heading;
 }
 
-.padding_custom {
-    padding: 1rem 2rem;
-}
-
-img {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-}
-
 .card {
+
+    img {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+    }
+
     img:hover {
         opacity: 0.3;
         background-color: $primary_soft;
@@ -76,5 +73,13 @@ img {
 .btn.btn:hover {
     background-color: $secondary;
 
+}
+
+.padding_custom {
+    padding: 1rem 2rem;
+}
+
+.fs_custom {
+    font-size: 4rem;
 }
 </style>
