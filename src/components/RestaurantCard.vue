@@ -29,8 +29,6 @@ export default {
 
 <template>
 
-
-
     <div class="col">
         <div class="container">
             <div class="card">
