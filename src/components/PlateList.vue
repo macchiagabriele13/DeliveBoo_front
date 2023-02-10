@@ -49,7 +49,7 @@ export default {
 
     },
     mounted() {
-        this.getPlate(this.base_api_url + '/api/plates');
+        this.getPlate(this.base_api_url + '/api/restaurants');
     }
 }
 </script>
@@ -62,7 +62,7 @@ export default {
 
 
 
-                    <PlateCard :plate="plate" v-for="plate in plates.data"></PlateCard>
+                    <PlateCard :plate="plate" v-for="plate in restaurants.data"></PlateCard>
 
 
 
