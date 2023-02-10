@@ -33,12 +33,12 @@ export default {
 
     <div class="col">
         <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
-            <img class="card-image rounded-top" :src="getImagePath(plate.cover_image)" alt="">
+            <img class="card-image rounded-top" :src="getImagePath(plate.image)" alt="">
             <div class="card-body">
-                <h4 class="text-title">{{ plate.title }}</h4>
+                <h4 class="text-title">{{ plate.name }}</h4>
                 <p class="text-body">{{ plate.description }}</p>
-                <router-link :to="{ name: 'single-plate', params: { slug: plate.slug } }">Read
-                    More</router-link>
+                <!-- <router-link :to="{ name: 'single-plate', params: { slug: plate.slug } }">Read
+                    More</router-link> -->
             </div>
             <div class="card-footer text-muted">
                 <div class="type">
