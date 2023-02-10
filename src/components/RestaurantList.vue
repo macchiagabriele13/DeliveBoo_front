@@ -55,66 +55,7 @@ export default {
 </script>
 
 <template>
-    <div class="container my-4">
-        <div class="row restaurants_list">
-            <div class="banner">
-                <div class="container-fluid">
-                    <img src="../../public/" alt="">
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-12 restaurant">
-                <div class="card">
-                    <img class="img-fluid" src="../../public/img/MCDONALDS-CORPORATIVO-PORTADA-PARTE-2-1920x1080.jpeg"
-                        alt="">
-                    <div class="card-body">
-                        <div class="title text-center">
-                            <h4 class="">Restaurant Name</h4>
-                            <div class="single-project mt-3">
-                                <!-- <router-link :to="{ name: 'single-restaurant' }" class="text-decoration-none link">Read
-                                    More</router-link> -->
-                                <a href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-6 col-lg-12 restaurant">
-                <div class="card">
-                    <img class="img-fluid" src="../../public/img/giappo.jpg" alt="">
-                    <div class="card-body">
-                        <div class="title text-center">
-                            <h4 class="">Restaurant Name</h4>
-                            <div class="single-project mt-3">
-                                <!-- <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
-                        class="text-decoration-none link">Read
-                        More</router-link> -->
-                                <a href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-12 restaurant">
-                <div class="card">
-                    <img class="img-fluid" src="../../public/img/giappo.jpg" alt="">
-                    <div class="card-body">
-                        <div class="title text-center">
-                            <h4 class="">Restaurant Name</h4>
-                            <div class="single-project mt-3">
-                                <!-- <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
-                        class="text-decoration-none link">Read
-                        More</router-link> -->
-                                <a href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- <section class="vue-home pt-5">
+    <section class="vue-home pt-5">
 
         <div class="container">
             <div v-if="restaurants && !loading">
@@ -122,7 +63,8 @@ export default {
 
 
 
-                    <RestaurantCard :restaurant="restaurant" v-for="restaurant in restaurants.data"></RestaurantCard>
+                    <RestaurantCard :restaurant="restaurant" v-for="restaurant in restaurants.data">
+                    </RestaurantCard>
 
 
 
@@ -153,7 +95,7 @@ export default {
                 <p> No resturants here </p>
             </div>
         </div>
-    </section> -->
+    </section>
 
 
 
@@ -171,35 +113,6 @@ export default {
         width: 100%;
         height: 150px;
         object-fit: cover;
-    }
-}
-
-.card {
-    .card-body {
-        display: none;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        color: $light;
-
-        .title {
-            max-width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            a {
-                text-decoration: none;
-                color: $light;
-            }
-        }
-    }
-
-    &:hover .card-body {
-        display: block;
-        background-color: rgba(0, 0, 0, 0.731);
     }
 }
 </style>
