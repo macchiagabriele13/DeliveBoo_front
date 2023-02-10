@@ -30,12 +30,12 @@ export default {
 <template>
 
     <div class="col">
-        <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4 h-100" style="width: 21rem;">
+        <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4 w-100 h-100" style="width: 21rem;">
             <img class="card-img-top rounded-top p-4" :src="getImagePath(plate.image)" alt="">
             <div class="card-body d-flex justify-content-center align-items-center flex-column mt-5">
                 <h4 class="text-title">{{ plate.name }}</h4>
                 <p class="text-body">{{ plate.description }}</p>
-                <p class="text-body">{{ plate.price }}</p>
+                <h6>{{ plate.price + ' €' }}</h6>
                 <a name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" href="#"
                     role="button">Add to
                     Cart</a>
