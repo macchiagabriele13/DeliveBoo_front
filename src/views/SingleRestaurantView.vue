@@ -22,7 +22,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4" style="width: 18rem;">
+                    <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4" style="width: 21rem;">
                         <img src="../../public/img/giappo.jpg" class="card-img-top rounded-top p-4" alt="...">
                         <div class="card-body d-flex justify-content-center align-items-center flex-column mt-5">
                             <h4 class="text-title">Sushi</h4>
@@ -50,6 +50,10 @@ export default {
     background-color: $primary;
 }
 
+.text-title {
+    font-family: $font_heading;
+}
+
 .padding_custom {
     padding: 1rem 2rem;
 }
@@ -62,9 +66,11 @@ img {
     transition: .5s ease;
 }
 
-img:hover {
-    opacity: 0.3;
-    background-color: $primary_soft;
+.card {
+    img:hover {
+        opacity: 0.3;
+        background-color: $primary_soft;
+    }
 }
 
 .btn.btn:hover {
