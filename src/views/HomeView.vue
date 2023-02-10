@@ -11,29 +11,35 @@ export default {
             <div class="container-fluid bg_orange d-flex align-items-center">
                 <div class="home_text mt-3">
                     <div class="container w-75">
-                        <h1>Titolo HomePage</h1>
+                        <h1>199 Pac <br> Fc-d 199</h1>
                         <h5 class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
                             enim
                             temporibus
                             laudantium mollitia voluptates possimus neque magni repellat eligendi quos!</h5>
                         <div class="mb-1">
-                            <input type="search" class="form-control rounded-pill border-0 w-50" name="searchRestaurant"
+                            <input type="search" class="form-control rounded-pill border-0 w-75" name="searchRestaurant"
                                 id="searchRestaurant" aria-describedby="searchRestaurantHelper"
                                 placeholder="Text here a restaurant name">
                             <small id="searchRestarauntHelper" class="form-text text-muted">Find your favorite
                                 restaurant</small>
                         </div>
-                        <div class="button_wrapper">
-                            <img height="150" src="../../public/img/pacman.png" alt="">
-                            <span class="button_clickme">
-                                <a name="" id="" class="btn btn-danger ms-4 rounded-circle p-3" href="#"
+                        <!-- pac-man -->
+                        <div class="button_wrapper d-flex align-items-center">
+                            <div class="pacman">
+                                <div class="pacman__eye"></div>
+                                <div class="pacman__mouth"></div>
+                                <div class="pacman__food"></div>
+                            </div>
+                            <!-- <img height="150" src="../../public/img/pacman.png" alt=""> -->
+                            <span class="button_clickme ms-4 mt-4">
+                                <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
                                     role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
                             </span>
                         </div>
                     </div>
                 </div>
                 <div class="image py-3">
-                    <img height="600" src="../../public/img/deliveboo-home-image.png" alt="">
+                    <img width="780" height="500" src="../../public/img/pac-burger.png" alt="">
                 </div>
             </div>
         </section>
@@ -60,7 +66,9 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/general.scss';
+
 @import '../styles/_variables';
+@import url('https://fonts.cdnfonts.com/css/pac-font');
 
 
 .bg_orange {
@@ -75,7 +83,7 @@ export default {
     backdrop-filter: blur(6px);
     border-radius: 17px;
     text-align: center;
-    cursor: pointer;
+      cursor: pointer;
     transition: all 0.5s;
     display: flex;
     align-items: center;
@@ -83,7 +91,58 @@ export default {
     user-select: none;
     font-weight: bolder;
     position: relative;
+    }
 
+h1 {
+    font-family: 'PacFont', sans-serif;
+}
+
+.pacman {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f2d648;
+    position: relative;
+    margin-top: 20px;
+    bottom: 15%;
+    position: absolute;
+    animation: linear infinite;
+    animation-name: run;
+    animation-duration: 5s;
+}
+
+.pacman__eye {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 20px;
+    right: 40px;
+    background: #333333;
+}
+
+.pacman__mouth {
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    animation-name: eat;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+
+.pacman__food {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    top: 40%;
+    left: 120px;
+    animation-name: food;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
 }
 
 
@@ -142,5 +201,69 @@ export default {
     padding: 16px 32px;
     display: block;
     transform: scale(1.05);
+}
+
+//Pac-Man Mouth Animation//
+
+@keyframes eat {
+    0% {
+        clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+
+    25% {
+        clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+    }
+
+    50% {
+        clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+    }
+
+    75% {
+        clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+    }
+
+    100% {
+        clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+}
+
+//Pac-Man Move Animation//
+
+@keyframes run {
+    0% {
+        left: 0;
+    }
+
+    48% {
+        -webkit-transform: rotateY(0deg);
+    }
+
+    50% {
+        left: 40%;
+        -webkit-transform: rotateY(180deg);
+    }
+
+    98% {
+        -webkit-transform: rotateY(180deg);
+    }
+
+    100% {
+        left: 0;
+        -webkit-transform: rotateY(0deg);
+    }
+}
+
+//Pac-Man Food Animation//
+
+@keyframes food {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
 }
 </style>
