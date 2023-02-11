@@ -7,6 +7,8 @@ import ContactsView from './views/ContactsView.vue'
 import NotFoundView from './views/NotFoundView.vue'
 import SingleRestaurantView from './views/SingleRestaurantView.vue'
 import RestaurantsView from './views/RestaurantsView.vue'
+import CartView from './views/CartView.vue'
+import CheckoutView from './views/CheckoutView.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -50,6 +52,17 @@ const router = createRouter({
             path: '/restaurants/:slug',
             name: 'single-restaurant',
             component: SingleRestaurantView
+        },
+
+        {
+            path: '/cart',
+            name: 'cart',
+            component: CartView
+        },
+        {
+            path: '/checkout',
+            name: 'checkout',
+            component: CheckoutView
         },
 
 
