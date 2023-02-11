@@ -4,26 +4,63 @@ import RestaurantCard from './RestaurantCard.vue'
 
 export default {
     components: {
-
         RestaurantCard,
     },
     name: 'RestaurantList',
     data() {
         return {
-            restaurants: [],
             base_api_url: 'http://localhost:8000',
+            restaurants: [],
+            types: [],
+            selected: [],
             error: null,
             loading: true,
         }
     },
     methods: {
-        getRestaurant(url) {
+        getRestaurants(url) {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data.results);
+                    // console.log(response.data.results);
                     this.restaurants = response.data.results;
                     this.loading = false
+                })
+                .catch(error => {
+                    console.error(error)
+                    this.error = error.message
+                })
+        },
+        getTypes(url) {
+            axios.get(url)
+                .then(response => {
+                    // console.log(response.data.results);
+                    this.types = response.data.results;
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+        },
+        searchRestaurants() {
+            if (this.selected.length !== 0) {
+                const types = this.selected.join('+');
+                // console.log(types);
+                this.getRestaurantsFiltered(this.base_api_url + '/api/restaurants/filter/' + types);
+            } else {
+                this.getRestaurants(this.base_api_url + '/api/restaurants');
+            }
+        },
+        getRestaurantsFiltered(url) {
+            axios
+                .get(url)
+                .then(response => {
+                    if (response.data.success) {
+                        // console.log(response.data.results);
+                        this.restaurants.data = response.data.results;
+                        this.loading = false
+                    } else {
+                        this.restaurants.data = [];
+                    }
                 })
                 .catch(error => {
                     console.error(error)
@@ -31,6 +68,20 @@ export default {
 
                 })
         },
+
+        toggleButton(id) {
+            if (!this.selected.includes(id)) {
+                this.selected.push(id);
+                // console.log(this.selected);
+            } else {
+                // const del = element => element === id
+                const toDel = this.selected.indexOf(id)
+                // console.log(toDel);
+                this.selected.splice(toDel, 1)
+                // console.log(this.selected);
+            }
+        },
+
         getImagePath(path) {
             console.log(path);
             if (path) {
@@ -49,7 +100,8 @@ export default {
 
     },
     mounted() {
-        this.getRestaurant(this.base_api_url + '/api/restaurants');
+        this.getRestaurants(this.base_api_url + '/api/restaurants');
+        this.getTypes(this.base_api_url + '/api/types');
     }
 }
 </script>
@@ -59,6 +111,16 @@ export default {
 
         <div class="container">
             <div v-if="restaurants && !loading">
+                <div class="d-flex gap-2">
+                    <div class="filter_button p-2 rounded-2"
+                        :class="selected.includes(tipo.name) ? 'bg-success' : 'bg-warning'" v-for="tipo in types"
+                        @click.preventDefault()="toggleButton(tipo.name)">
+                        {{ tipo.name }}
+                    </div>
+
+                    <button class="btn btn-primary" @click.preventDefault()="searchRestaurants()">Cerca</button>
+                </div>
+
                 <div class="row row-cols-1 row-cols-sm-3 g-4">
 
 
@@ -114,6 +176,10 @@ export default {
         height: 150px;
         object-fit: cover;
     }
+}
+
+.filter_button {
+    cursor: pointer;
 }
 </style>
 

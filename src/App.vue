@@ -14,7 +14,7 @@ export default {
 
 <template>
     <AppNav />
-    <Cart />
+    <!-- <Cart /> -->
     <RouterView />
     <AppFooter />
 </template>
