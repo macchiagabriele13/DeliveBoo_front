@@ -10,19 +10,19 @@ export default {
     name: 'PlateList',
     data() {
         return {
-            plates: [],
+            restaurant: [],
             base_api_url: 'http://localhost:8000',
             error: null,
             loading: true,
         }
     },
     methods: {
-        getPlate(url) {
+        getRestaurant(url) {
             axios
                 .get(url)
                 .then(response => {
                     console.log(response.data.results);
-                    this.plates = response.data.results;
+                    this.restaurant = response.data.results;
                     this.loading = false
                 })
                 .catch(error => {
@@ -49,7 +49,7 @@ export default {
 
     },
     mounted() {
-        this.getPlate(this.base_api_url + '/api/plates');
+        this.getRestaurant(this.base_api_url + '/api/restaurants/' + this.$route.params.slug);
     }
 }
 </script>
@@ -57,28 +57,30 @@ export default {
 <template>
     <section class="vue-home pt-5">
         <div class="container">
-            <div v-if="plates && !loading">
+            <div v-if="restaurant.plates && !loading">
                 <div class="row row-cols-1 row-cols-sm-3 g-4">
 
 
 
-                    <PlateCard :plate="plate" v-for="plate in plates.data"></PlateCard>
+                    <PlateCard :plate="plate" v-for="plate in restaurant.plates"></PlateCard>
 
 
 
                 </div>
                 <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
                     <ul class="pagination    ">
-                        <li class="page-item" v-if="plates.prev_page_url" @click="prevPage(plates.prev_page_url)">
+                        <li class="page-item" v-if="restaurant.prev_page_url"
+                            @click="prevPage(restaurant.prev_page_url)">
                             <a class="page-link" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
                         <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-                            plates.current_page
+                            restaurant.current_page
                         }}</a></li>
 
-                        <li class="page-item" v-if="plates.next_page_url" @click="nextPage(plates.next_page_url)">
+                        <li class="page-item" v-if="restaurant.next_page_url"
+                            @click="nextPage(restaurant.next_page_url)">
                             <a class="page-link" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>

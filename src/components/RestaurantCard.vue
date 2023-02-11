@@ -29,113 +29,184 @@ export default {
 
 <template>
 
-
-
     <div class="col">
-        <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
-            <img class="card-image rounded-top" :src="getImagePath(restaurant.cover_image)" alt="">
-            <div class="card-body">
-                <h4 class="text-title">{{ restaurant.title }}</h4>
-                <p class="text-body">{{ restaurant.description }}</p>
-                <router-link :to="{ name: 'single-restaurant', params: { slug: restaurant.slug } }">Read
-                    More</router-link>
-            </div>
-            <div class="card-footer text-muted">
-                <div class="type">
-                    <strong>type: </strong>
-                    <span v-if="restaurant.type">
-                        {{ restaurant.type.name }}
-                    </span>
-                    <span v-else>Untyped</span>
+        <div class="container">
+            <div class="card">
+                <div class="imgBx">
+                    <img class="img-fluid rounded" v-if="restaurant.image" :src="getImagePath(restaurant.image)" alt="">
+                    <img class="img-fluid rounded" v-else src="https://via.placeholder.com/600x300.png?text=Image"
+                        alt="">
+                </div>
+                <div class="contentBx my-3">
+                    <h2><strong>{{ restaurant.company_name }}</strong></h2>
+                    <div class="size my-3">
+                        <h3>{{ restaurant.description }}</h3>
+                    </div>
+                    <div class="color mb-4">
+                        <h3 class="m-0">Tipologia :</h3>
+                        <span v-for="tipo in restaurant.types">{{ tipo.name }}</span>
+                    </div>
+                    <router-link class="btn btn-orange"
+                        :to="{ name: 'single-restaurant', params: { slug: restaurant.slug } }">Read More</router-link>
                 </div>
             </div>
-
         </div>
     </div>
-
-
-
-
-
-
 
 
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/general.scss';
-@import '../styles/_variables';
+@import '../styles/variables';
 
-.card {
-    width: 190px;
-    height: 254px;
-    padding: .8em;
-    background: #f5f5f5;
+.container .card {
     position: relative;
-    overflow: visible;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    width: 320px;
+    height: 450px;
+    background: $light;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.card-image {
-    background-color: #ffcaa6;
-    height: 40%;
+.container .card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: .5rem;
-    transition: .3s ease;
+    height: 100%;
+    background: $primary;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
 }
 
-.card-info {
-    padding-top: 10%;
+.container .card:hover:before {
+    clip-path: circle(300px at 80% -20%);
 }
 
-svg {
-    width: 20px;
-    height: 20px;
+.container .card:after {
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: $primary_soft;
 }
 
-.card-footer {
+.container .card .imgBx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
     width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+.container .card:hover .imgBx {
+    top: 0%;
+    transform: translateY(0%);
+
+}
+
+.container .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 270px;
+}
+
+.container .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container .card:hover .contentBx {
+    height: 210px;
+}
+
+.container .card .contentBx h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: $primary;
+    margin: 0;
+}
+
+.container .card .contentBx .size,
+.container .card .contentBx .color {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-/*Text*/
-.text-title {
-    font-weight: 900;
-    font-size: 1.2em;
-    line-height: 1.5;
+.container .card:hover .contentBx .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
 }
 
-.text-body {
-    font-size: .9em;
-    padding-bottom: 10px;
+.container .card:hover .contentBx .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
 }
 
-/*Button*/
-.card-button {
-    border: 1px solid #252525;
-    display: flex;
-    padding: .3em;
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
+    color: $dark;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.container .card .contentBx .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: 0.5s;
+    color: #111;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 50px;
-    transition: .3s ease-in-out;
 }
 
-/*Hover*/
-.card:hover {
-    box-shadow: 0px 5px 15px #ffcaa6;
+// .container .card .contentBx .size span:hover {
+//     background: $primary_soft;
+// }
+
+.container .card .contentBx .color span {
+    width: 90px;
+    height: 20px;
+    background: $primary_soft;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
-.card-img:hover {
-    transform: translateY(-5%);
-    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
-}
+.container .card:hover .contentBx a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
 
-.card-button:hover {
-    border: 1px solid #ffcaa6;
-    background-color: #ffcaa6;
 }
 </style>

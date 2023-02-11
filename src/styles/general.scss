@@ -109,12 +109,13 @@ body {
     color: $light !important;
     font-weight: 400 !important;
     padding: 0.5rem;
+    border: 1px solid $primary !important;
 
     &:hover {
         background-color: $primary_soft !important;
         border-color: $primary_soft !important;
         color: $light !important;
         font-weight: 400 !important;
-
-    }
+        box-shadow: 0 0 10px $primary;
+        }
 }
