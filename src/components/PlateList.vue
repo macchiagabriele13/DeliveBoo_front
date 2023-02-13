@@ -32,7 +32,7 @@ export default {
                 })
         },
         getImagePath(path) {
-            console.log(path);
+            // console.log(path);
             if (path) {
                 return this.base_api_url + '/storage/' + path
             }
