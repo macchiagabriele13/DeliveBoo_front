@@ -11,23 +11,23 @@ export default {
             <div class="container">
                 <div class="row text-center">
                     <div class="col">
-                        <h3 class="mt-3 mb-4">Delivery Time</h3>
+                        <h3 class="mt-3 mb-4">Orari di Consegna</h3>
                         <ul class="list-unstyled">
                             <li>
-                                <h5>Monday - Saturday</h5>
-                                <p>9am - 11pm</p>
+                                <h5>Lunedì - Sabato</h5>
+                                <p>9:00 - 23:00</p>
                             </li>
                             <li>
-                                <h5>Sunday</h5>
-                                <p>11am - 7pm</p>
+                                <h5>Domenica</h5>
+                                <p>11:00 - 19:00</p>
                             </li>
                         </ul>
                     </div>
                     <div class="col">
-                        <h3 class="mt-3 mb-4">Contact Us</h3>
+                        <h3 class="mt-3 mb-4">Contattaci</h3>
                         <ul class="list-unstyled">
                             <li>
-                                <h5>Phone Number</h5>
+                                <h5>Telefono</h5>
                                 <p>0000 - 123 - 456789</p>
                             </li>
                             <li>

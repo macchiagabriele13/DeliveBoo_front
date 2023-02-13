@@ -33,9 +33,8 @@ export default {
         <div class="container">
             <div class="card">
                 <div class="imgBx">
-                    <img class="img-fluid rounded" v-if="restaurant.image" :src="getImagePath(restaurant.image)" alt="">
-                    <img class="img-fluid rounded" v-else src="https://via.placeholder.com/600x300.png?text=Image"
-                        alt="">
+                    <img class="img-fluid" v-if="restaurant.image" :src="getImagePath(restaurant.image)" alt="">
+                    <img class="img-fluid" v-else src="https://via.placeholder.com/600x300.png?text=Image" alt="">
                 </div>
                 <div class="contentBx my-3">
                     <h2><strong>{{ restaurant.company_name }}</strong></h2>
@@ -46,7 +45,7 @@ export default {
                         <h3 class="m-0">Tipologia :</h3>
                         <span v-for="tipo in restaurant.types">{{ tipo.name }}</span>
                     </div>
-                    <router-link class="btn btn-orange"
+                    <router-link class="btn btn_orange"
                         :to="{ name: 'single-restaurant', params: { slug: restaurant.slug } }">Read More</router-link>
                 </div>
             </div>
@@ -114,8 +113,10 @@ export default {
 .container .card .imgBx img {
     position: absolute;
     top: 0;
-    left: 25px;
-    width: 270px;
+    left: 20%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }
 
 .container .card .contentBx {
