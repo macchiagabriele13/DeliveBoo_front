@@ -1,5 +1,5 @@
 <script>
-
+import { store } from '../store.js';
 
 export default {
     name: 'PlateCard',
@@ -8,14 +8,14 @@ export default {
     },
     data() {
         return {
-
-            base_api_url: 'http://localhost:8000',
+            store,
+            base_api_url: 'http://localhost:8000'
 
         }
     },
     methods: {
         getImagePath(path) {
-            console.log(path);
+            // console.log(path);
             if (path) {
                 return this.base_api_url + '/storage/' + path
             }
@@ -24,7 +24,6 @@ export default {
     }
 
 }
-
 </script>
 
 <template>
@@ -36,9 +35,8 @@ export default {
                 <h4 class="text-title">{{ plate.name }}</h4>
                 <p class="text-body">{{ plate.description }}</p>
                 <h6>{{ plate.price + ' €' }}</h6>
-                <a name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" href="#"
-                    role="button">Add to
-                    Cart</a>
+                <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" href="#"
+                    role="button" @click.preventDefault()="store.addToCart(plate)">Add to Cart</button>
             </div>
         </div>
     </div>
