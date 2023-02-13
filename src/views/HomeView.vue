@@ -7,39 +7,30 @@ export default {
 <template>
     <main>
         <!-- homepage -->
-        <section id="home">
-            <div class="container-fluid bg_orange d-flex align-items-center">
-                <div class="home_text mt-3">
-                    <div class="container w-75">
-                        <h1>199 Pac <br> Fc-d 199</h1>
-                        <h5 class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                            enim
-                            temporibus
-                            laudantium mollitia voluptates possimus neque magni repellat eligendi quos!</h5>
-                        <div class="mb-1">
-                            <input type="search" class="form-control rounded-pill border-0 w-75" name="searchRestaurant"
-                                id="searchRestaurant" aria-describedby="searchRestaurantHelper"
-                                placeholder="Text here a restaurant name">
-                            <small id="searchRestarauntHelper" class="form-text text-muted">Find your favorite
-                                restaurant</small>
-                        </div>
-                        <!-- pac-man -->
-                        <div class="button_wrapper d-flex align-items-center">
-                            <div class="pacman">
-                                <div class="pacman__eye"></div>
-                                <div class="pacman__mouth"></div>
-                                <div class="pacman__food"></div>
-                            </div>
-                            <!-- <img height="150" src="../../public/img/pacman.png" alt=""> -->
-                            <span class="button_clickme ms-4 mt-4">
+        <section id="home" class="bg_orange">
+            <div class="container h-100 d-flex align-items-center">
+                <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
+                <div class="title">
+                    <h1>Ordina Ora!</h1>
+                    <p>
+                        Ordina online dai tuoi ristoranti preferiti
+                    </p>
+                </div>
+
+                <!-- pac-man -->
+                <div class="button_wrapper d-flex align-items-center">
+                    <div class="pacman">
+                        <div class="pacman__eye"></div>
+                        <div class="pacman__mouth"></div>
+                        <div class="pacman__food"></div>
+                    </div>
+                    <!-- <img height="150" src="../../public/img/pacman.png" alt=""> -->
+                    <!-- <span class="button_clickme ms-4 mt-4">
                                 <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
                                     role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="image py-3">
-                    <img width="780" height="500" src="../../public/img/pac-burger.png" alt="">
+                            </span> -->
+                    <!-- </div> -->
+
                 </div>
             </div>
         </section>
@@ -73,6 +64,12 @@ export default {
 
 .bg_orange {
     background-color: $primary;
+    height: calc(100vh - 127px);
+
+    background-image: url('../../public/img/pac-burger.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 50%;
 }
 
 .card {
@@ -83,7 +80,7 @@ export default {
     backdrop-filter: blur(6px);
     border-radius: 17px;
     text-align: center;
-      cursor: pointer;
+    cursor: pointer;
     transition: all 0.5s;
     display: flex;
     align-items: center;
@@ -91,10 +88,24 @@ export default {
     user-select: none;
     font-weight: bolder;
     position: relative;
+}
+
+.title {
+    width: 100%;
+
+    h1 {
+        font-size: 100px;
     }
 
-h1 {
-    font-family: 'PacFont', sans-serif;
+    p {
+        color: $dark;
+        margin-top: 2rem;
+        font-size: 25px;
+    }
+}
+
+.image {
+    margin-top: 4rem;
 }
 
 .pacman {
@@ -164,16 +175,6 @@ h1 {
     transform: scale(0.95) rotateZ(1.7deg);
 }
 
-
-.image {
-    opacity: 1;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 17px;
-}
 
 .middle {
     transition: .5s ease;

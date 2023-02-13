@@ -111,14 +111,25 @@ export default {
 
         <div class="container">
             <div v-if="restaurants && !loading">
-                <div class="d-flex gap-2">
-                    <div class="filter_button p-2 rounded-2"
-                        :class="selected.includes(tipo.name) ? 'bg-success' : 'bg-warning'" v-for="tipo in types"
+                <div class="d-flex gap-2 filters">
+                    <div class="filter_button p-2 rounded-pill"
+                        :class="selected.includes(tipo.name) ? 'bg_success' : 'bg-warning'" v-for="tipo in types"
                         @click.preventDefault()="toggleButton(tipo.name)">
+                        <img class="img-fluid" src="../../public/img/restaurant.png" alt="">
                         {{ tipo.name }}
                     </div>
 
-                    <button class="btn btn-primary" @click.preventDefault()="searchRestaurants()">Cerca</button>
+                    <!-- <button class="btn btn-primary" @click.preventDefault()="searchRestaurants()">Cerca</button> -->
+                    <button class="cta btn_search">
+                        <span class="hover-underline-animation" @click.preventDefault()="searchRestaurants()">Cerca
+                        </span>
+                        <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg"
+                            id="arrow-horizontal">
+                            <path transform="translate(30)"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                data-name="Path 10" id="Path_10"></path>
+                        </svg>
+                    </button>
                 </div>
 
                 <div class="row row-cols-1 row-cols-sm-3 g-4">
@@ -132,7 +143,7 @@ export default {
 
                 </div>
                 <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
-                    <ul class="pagination    ">
+                    <ul class="pagination">
                         <li class="page-item" v-if="restaurants.prev_page_url"
                             @click="prevPage(restaurants.prev_page_url)">
                             <a class="page-link" aria-label="Previous">
@@ -153,8 +164,14 @@ export default {
                 </nav>
 
             </div>
+            <div class=" text-center" v-else-if="loading">
+                <div class="loading">
+                    <img src="../../public/img/pacman.gif" alt="">
+                </div>
+                <h6>Loading...</h6>
+            </div>
             <div v-else>
-                <p> No resturants here </p>
+                <p>Non sono presenti ristoranti</p>
             </div>
         </div>
     </section>
@@ -178,8 +195,94 @@ export default {
     }
 }
 
-.filter_button {
-    cursor: pointer;
+.filters {
+    margin-bottom: 5rem;
+
+    .filter_button {
+        cursor: pointer;
+        width: 130px;
+        text-align: center;
+        transition: all 0.7s;
+
+        img {
+            width: 25px;
+        }
+    }
+}
+
+.bg_success {
+    background-color: $secondary;
+    box-shadow: 0 0 20px #6fc5ff50;
+}
+
+.loading {
+    img {
+        width: 150px;
+    }
+}
+
+.cta {
+    border: none;
+    background: none;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active svg {
+    transform: scale(0.9);
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.pagination {
+    .page-item {
+        background-color: $primary;
+        border-radius: 20px;
+        height: 30px;
+
+        .page-link {
+            background-color: $primary;
+            border: none;
+            height: 30px;
+        }
+    }
 }
 </style>
 
