@@ -185,7 +185,7 @@ button:hover:after {
 
 .bg_orange {
     background-color: $primary;
-    height: calc(100vh - 127px);
+    height: calc(100vh - 120px);
 
     background-image: url('../../public/img/pac-burger.png');
     background-repeat: no-repeat;

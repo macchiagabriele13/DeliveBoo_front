@@ -16,7 +16,10 @@ export const store = reactive({
     },
 
     addToCart(plate) {
-        this.cart = JSON.parse(localStorage.plates)
+        if (localStorage.plates) {
+
+            this.cart = JSON.parse(localStorage.plates)
+        }
 
         if (!store.cartOn) {
             store.cartOn = true;
@@ -33,7 +36,7 @@ export const store = reactive({
                 this.cart.quantity[index]++;
             }
         } else {
-            if (!this.cart.plates.plates.length === 0) {
+            if (this.cart.plates.plates.length !== 0) {
                 alert('Non puoi ordinare da più ristoranti diversi, i dati del carrello precedenti sono stati rimossi!');
             }
 
