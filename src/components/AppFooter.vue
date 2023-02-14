@@ -7,10 +7,10 @@ export default {
 <template>
     <!-- footer -->
     <footer class="bg_footer">
-        <section class="border-bottom border-dark border-1" id="footer_top">
+        <section class="border_bottom" id="footer_top">
             <div class="container">
                 <div class="row text-center">
-                    <div class="col">
+                    <div class="col text-white">
                         <h3 class="mt-3 mb-4">Orari di Consegna</h3>
                         <ul class="list-unstyled">
                             <li>
@@ -23,7 +23,7 @@ export default {
                             </li>
                         </ul>
                     </div>
-                    <div class="col">
+                    <div class="col text-white">
                         <h3 class="mt-3 mb-4">Contattaci</h3>
                         <ul class="list-unstyled">
                             <li>
@@ -37,7 +37,7 @@ export default {
                             <li>
                                 <div class="social_icons d-flex justify-content-center mt-2">
                                     <div
-                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center align-items-center mx-2">
+                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center text-white align-items-center mx-2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -48,7 +48,7 @@ export default {
                                     </div>
 
                                     <div
-                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center align-items-center">
+                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center text-white align-items-center">
                                         <a href="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -59,7 +59,7 @@ export default {
                                     </div>
 
                                     <div
-                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center align-items-center mx-2">
+                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center text-white align-items-center mx-2">
                                         <a href="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
@@ -69,7 +69,7 @@ export default {
                                         </a>
                                     </div>
                                     <div
-                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center align-items-center">
+                                        class="wrap_circle_icon rounded-circle d-flex justify-content-center text-white align-items-center">
                                         <a href="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -88,7 +88,7 @@ export default {
         </section>
         <section id="footer_bottom">
             <div class="copyright">
-                <p class="m-0 p-2">&copy; 2023 Boolean Team-2</p>
+                <p class="m-0 p-2 text-white">&copy; 2023 Boolean Team-2</p>
             </div>
         </section>
     </footer>
@@ -104,8 +104,13 @@ export default {
     background-repeat: no-repeat;
 }
 
+.border_bottom {
+    border-bottom: 1px solid rgb(255 248 248 / 46%);
+    ;
+}
+
 .hover_red_mail {
-    color: $dark;
+    color: $light;
 }
 
 .hover_red_mail:hover {

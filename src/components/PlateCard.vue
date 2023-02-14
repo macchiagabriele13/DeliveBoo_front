@@ -31,12 +31,16 @@ export default {
     <div class="col">
         <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4 w-100 h-100" style="width: 21rem;">
             <img class="card-img-top rounded-top p-4" :src="getImagePath(plate.image)" alt="">
-            <div class="card-body d-flex justify-content-center align-items-center flex-column mt-5">
-                <h4 class="text-title">{{ plate.name }}</h4>
-                <p class="text-body">{{ plate.description }}</p>
-                <h6>{{ plate.price + ' €' }}</h6>
-                <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" href="#"
-                    role="button" @click.preventDefault()="store.addToCart(plate)">Add to Cart</button>
+            <div class="card-body d-flex align-items-center flex-column justify-content-between">
+                <div class="card-info">
+                    <h4 class="text-title">{{ plate.name }}</h4>
+                    <p class="text-body">{{ plate.description }}</p>
+                </div>
+                <div class="card-action">
+                    <h6>{{ plate.price + ' €' }}</h6>
+                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" href="#"
+                        role="button" @click.preventDefault()="store.addToCart(plate)">Add to Cart</button>
+                </div>
             </div>
         </div>
     </div>
@@ -89,5 +93,11 @@ export default {
 
 .fs_custom {
     font-size: 4rem;
+}
+
+.card-action {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 </style>

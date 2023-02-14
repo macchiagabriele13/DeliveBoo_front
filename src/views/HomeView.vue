@@ -10,6 +10,7 @@ export default {
         <section id="home" class="bg_orange">
             <div class="container h-100 d-flex align-items-center">
                 <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
+
                 <button class="btn pt-4 border-0 btn_title">
                     <div class="title">
                         <a href="#restaurant_cards">
@@ -198,10 +199,11 @@ button:hover:after {
 
     h1 {
         font-size: 100px;
+        color: $light;
     }
 
     p {
-        color: $dark;
+        color: $light;
         margin-top: 2rem;
         font-size: 25px;
     }

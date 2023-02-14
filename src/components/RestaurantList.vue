@@ -111,11 +111,11 @@ export default {
 
         <div class="container">
             <div v-if="restaurants && !loading">
-                <div class="d-flex gap-2 filters">
-                    <div class="filter_button p-2 rounded-pill"
-                        :class="selected.includes(tipo.name) ? 'bg_success' : 'bg-warning'" v-for="tipo in types"
+                <div class="d-flex filters flex-md-nowrap flex-wrap gap-1 justify-content-lg-center">
+                    <div class="align-items-lg-center align-items-md-center d-lg-flex d-md-flex filter_button flex-lg-row flex-md-column justify-content-md-center p-2 rounded-pill"
+                        :class="selected.includes(tipo.name) ? 'bg_success' : 'bg_orange'" v-for="tipo in types"
                         @click.preventDefault()="toggleButton(tipo.name)">
-                        <img class="img-fluid" src="../../public/img/restaurant.png" alt="">
+                        <img class="img-fluid " src="../../public/img/restaurant.png" alt="">
                         {{ tipo.name }}
                     </div>
 
@@ -132,7 +132,7 @@ export default {
                     </button>
                 </div>
 
-                <div class="row row-cols-1 row-cols-sm-3 g-4">
+                <div class="g-4 row row-cols-1 row-cols-lg-2 row-cols-md-2 row-cols-sm-3 row-cols-xl-3">
 
 
 
@@ -186,6 +186,26 @@ export default {
 @use '../styles/general.scss';
 @import '../styles/_variables';
 
+@media (min-width: 769px) {
+    .filter_button {
+        img {
+            margin-right: 5px !important;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .filters {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
 .restaurant {
 
     img {
@@ -206,31 +226,44 @@ export default {
 
         img {
             width: 25px;
+
         }
     }
 }
 
 .bg_success {
-    background-color: $secondary;
+    background-color: $secondary !important;
     box-shadow: 0 0 20px #6fc5ff50;
 }
 
+.bg_orange {
+    background-color: $primary !important;
+    box-shadow: 0 0 20px #dfc30d50;
+}
+
 .loading {
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
     img {
-        width: 150px;
+        width: 350px;
     }
 }
 
 .cta {
-    border: none;
+    border: 1px solid #f5a6063d;
     background: none;
+    border-radius: 25px;
 }
 
 .cta span {
     padding-bottom: 7px;
     letter-spacing: 4px;
     font-size: 14px;
-    padding-right: 15px;
+    padding-right: 7.5px;
+    padding-left: 7.5px;
     text-transform: uppercase;
 }
 
@@ -249,19 +282,19 @@ export default {
 
 .hover-underline-animation {
     position: relative;
-    color: black;
+    color: $dark;
     padding-bottom: 20px;
 }
 
 .hover-underline-animation:after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 80%;
     transform: scaleX(0);
     height: 2px;
     bottom: 0;
-    left: 0;
-    background-color: #000000;
+    left: 5%;
+    background-color: $primary;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -275,12 +308,12 @@ export default {
     .page-item {
         background-color: $primary;
         border-radius: 20px;
-        height: 30px;
+
 
         .page-link {
             background-color: $primary;
             border: none;
-            height: 30px;
+            padding: 0.5rem 1rem;
         }
     }
 }

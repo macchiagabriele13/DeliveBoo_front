@@ -191,6 +191,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/general.scss';
+
+@import '../styles/_variables';
+
 .bg_orange {
     background-color: orange;
 }
@@ -220,6 +224,7 @@ export default {
 
 .fs_custom {
     font-size: 4rem;
+    color: $light;
 }
 
 .mt_custom {
