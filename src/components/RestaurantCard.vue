@@ -30,23 +30,32 @@ export default {
 <template>
 
     <div class="col">
-        <div class="container">
+        <div class="container d-flex justify-content-center">
             <div class="card">
                 <div class="imgBx">
                     <img class="img-fluid" v-if="restaurant.image" :src="getImagePath(restaurant.image)" alt="">
                     <img class="img-fluid" v-else src="https://via.placeholder.com/600x300.png?text=Image" alt="">
                 </div>
-                <div class="contentBx my-3">
-                    <h2><strong>{{ restaurant.company_name }}</strong></h2>
-                    <div class="size my-3">
-                        <h3>{{ restaurant.description }}</h3>
+                <div class="contentBx d-flex align-items-center flex-column justify-content-between my-3">
+                    <div class="card-info">
+
+                        <h2><strong>{{ restaurant.company_name }}</strong></h2>
+                        <div class="size my-3 restaurant-description">
+                            <h3>{{ restaurant.description }}</h3>
+                        </div>
+                        <div class="color mb-4">
+                            <h3 class="m-0">Tipologia :</h3>
+                            <div class="tipologia">
+                                <span v-for="tipo in restaurant.types">{{ tipo.name }}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="color mb-4">
-                        <h3 class="m-0">Tipologia :</h3>
-                        <span v-for="tipo in restaurant.types">{{ tipo.name }}</span>
+                    <div class="card-action w-50">
+                        <router-link class="btn btn_orange"
+                            :to="{ name: 'single-restaurant', params: { slug: restaurant.slug } }">Scopri i
+                            Piatti</router-link>
+
                     </div>
-                    <router-link class="btn btn_orange"
-                        :to="{ name: 'single-restaurant', params: { slug: restaurant.slug } }">Read More</router-link>
                 </div>
             </div>
         </div>
@@ -59,6 +68,47 @@ export default {
 @use '../styles/general.scss';
 @import '../styles/variables';
 
+@media (max-width: 320px) {
+
+    .restaurant-description {
+        display: none !important;
+    }
+
+    .card-info {
+        padding: 0 1rem;
+    }
+
+    .color {
+        margin-top: 0.5rem;
+        flex-direction: column;
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            /* font-weight: 500; */
+            line-height: 1.2;
+        }
+
+        .tipologia {
+            padding: 1rem;
+
+            span {
+                margin: 0 0.5rem !important;
+                padding: 0.5rem !important;
+            }
+
+        }
+    }
+}
+
+.tipologia {
+
+
+    span {
+        padding: 0.5rem !important;
+    }
+}
+
 .container .card {
     position: relative;
     width: 320px;
@@ -67,6 +117,8 @@ export default {
     border-radius: 20px;
     overflow: hidden;
 }
+
+@media screen {}
 
 .container .card:before {
     content: '';
@@ -98,14 +150,14 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10000;
+    z-index: 2;
     width: 100%;
     height: 220px;
     transition: 0.5s;
 }
 
 .container .card:hover .imgBx {
-    top: 0%;
+    top: 3%;
     transform: translateY(0%);
 
 }
@@ -117,6 +169,8 @@ export default {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .container .card .contentBx {
@@ -201,7 +255,16 @@ export default {
     background: $primary_soft;
     border-radius: 5px;
     margin: 0 5px;
-    cursor: pointer;
+    cursor: default;
+}
+
+.contentBx {
+
+    h2,
+    h3,
+    .div {
+        cursor: default;
+    }
 }
 
 .container .card:hover .contentBx a {

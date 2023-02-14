@@ -80,6 +80,11 @@ h1 {
  * Navbar
  */
 
+nav {
+    border-bottom: 1px solid rgb(114 114 114 / 10%);
+    ;
+}
+
 .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -108,18 +113,44 @@ h1 {
 }
 
 .btn_orange {
-    background-color: $primary  !important;
-    border-color: $primary  !important;
-    color: $light  !important;
+    background-color: $primary !important;
+    border-color: $primary !important;
+    color: $light !important;
     font-weight: 400 !important;
     padding: 0.5rem;
-    border: 1px solid $primary  !important;
+    border: 1px solid $primary !important;
+    transition: shadow 0.1s ease-in-out;
 
     &:hover {
-        background-color: $primary_soft  !important;
-        border-color: $primary_soft  !important;
-        color: $light  !important;
+        background-color: $primary_soft !important;
+        border-color: $primary_soft !important;
+        color: $light !important;
         font-weight: 400 !important;
         box-shadow: 0 0 10px $primary;
+        transition: shadow 0.1s ease-in-out;
     }
+
+    &:focus-within {
+        transition: shadow 0.1s ease-in-out;
+    }
+}
+
+.pagination {
+    .page-item {
+        background-color: $primary;
+        border-radius: 20px;
+
+
+        .page-link {
+            background-color: $primary;
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+.card-action {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }

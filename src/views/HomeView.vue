@@ -10,7 +10,7 @@ export default {
         <section id="home" class="bg_orange">
             <div class="container h-100 d-flex align-items-center">
                 <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
-                <div class="title">
+                <div class="title ">
                     <h1>Ordina Ora!</h1>
                     <p>
                         Ordina online dai tuoi ristoranti preferiti
@@ -95,10 +95,11 @@ export default {
 
     h1 {
         font-size: 100px;
+        color: $light;
     }
 
     p {
-        color: $dark;
+        color: $light;
         margin-top: 2rem;
         font-size: 25px;
     }
