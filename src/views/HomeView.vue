@@ -10,46 +10,99 @@ export default {
         <section id="home" class="bg_orange">
             <div class="container h-100 d-flex align-items-center">
                 <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
-                <div class="title ">
-                    <h1>Ordina Ora!</h1>
-                    <p>
-                        Ordina online dai tuoi ristoranti preferiti
-                    </p>
-                </div>
+
+                <button class="btn pt-4 border-0 btn_title">
+                    <div class="title">
+                        <a href="#restaurant_cards">
+                            <h1>Ordina Ora!</h1>
+                        </a>
+                        <p>
+                            Ordina online dai tuoi ristoranti preferiti
+                        </p>
+                    </div>
+                </button>
+
 
                 <!-- pac-man -->
-                <div class="button_wrapper d-flex align-items-center">
+                <!-- <div class="button_wrapper d-flex align-items-center">
                     <div class="pacman">
                         <div class="pacman__eye"></div>
                         <div class="pacman__mouth"></div>
                         <div class="pacman__food"></div>
-                    </div>
-                    <!-- <img height="150" src="../../public/img/pacman.png" alt=""> -->
-                    <!-- <span class="button_clickme ms-4 mt-4">
+                    </div> -->
+                <!-- <img height="150" src="../../public/img/pacman.png" alt=""> -->
+                <!-- <span class="button_clickme ms-4 mt-4">
                                 <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
                                     role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
                             </span> -->
-                    <!-- </div> -->
+                <!-- </div> -->
 
-                </div>
+                <!-- </div> -->
             </div>
         </section>
         <!-- cards tipi ristorante -->
         <section id="restaurant_cards">
             <div class="container">
-                <div class="row mt-4 mb-4">
-                    <div class="col d-flex">
-                        <div class="card">
-                            <img src="../../public/img/giappo.jpg" alt="restaurant_image" class="image"
-                                style="width:100%">
-                            <div class="middle">
-                                <div class="text">Ristorante Giapponese</div>
-                            </div>
+                <div class="row">
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="../../public/img/pizza.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body">
+                            <a href="">
+                                <div class="text">Pizza</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="../../public/img/donuts.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body">
+                            <a href="">
+                                <div class="text">Dolci</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="../../public/img/sushi.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body">
+                            <a href="">
+                                <div class="text">Sushi</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="../../public/img/american.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body">
+                            <a href="">
+                                <div class="text">Americano</div>
+                            </a>
                         </div>
                     </div>
                 </div>
-
-
+                <div class="row mt-5 d-flex justify-content-center">
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="../../public/img/hamburger.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body" @click.preventDefault()="searchRestaurants()">
+                            <a href="">
+                                <div class="text">Hamburger</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="../../public/img/pasta.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body">
+                            <a href="">
+                                <div class="text">Italiano</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <img src="../../public/img/kebab.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body">
+                            <a href="">
+                                <div class="text">Kebab</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -61,6 +114,74 @@ export default {
 @import '../styles/_variables';
 @import url('https://fonts.cdnfonts.com/css/pac-font');
 
+button {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    background: none;
+    color: white;
+    position: relative;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    z-index: 2;
+    transition: 0.01s 0.23s ease-out all;
+    overflow: hidden;
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 58%;
+    background: $primary_soft;
+    z-index: -1;
+    transition: 0.3s ease-in all;
+}
+
+button:after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    top: 5%;
+    height: 90%;
+    width: 5%;
+    background: #fabd2f93;
+    transition: 0.4s 0.02s ease-in all;
+}
+
+button:hover {
+    cursor: pointer;
+    color: transparent;
+}
+
+button:hover:before {
+    left: 120%;
+    width: 25%;
+}
+
+button:hover:after {
+    left: 100%;
+    width: 70%;
+    border: none;
+}
+
+
+.signature {
+    position: fixed;
+    font-family: sans-serif;
+    font-weight: 100;
+    bottom: 10px;
+    left: 0;
+    letter-spacing: 4px;
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
 .bg_orange {
     background-color: $primary;
@@ -72,23 +193,6 @@ export default {
     background-size: 50%;
 }
 
-.card {
-    box-sizing: border-box;
-    width: 250px;
-    height: 190px;
-    border: 1px solid $light;
-    backdrop-filter: blur(6px);
-    border-radius: 17px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    font-weight: bolder;
-    position: relative;
-}
 
 .title {
     width: 100%;
@@ -103,10 +207,22 @@ export default {
         margin-top: 2rem;
         font-size: 25px;
     }
+
+    a {
+        text-decoration: none;
+        color: $dark;
+        transition: 0.2s 0.02s ease-in all;
+
+    }
+
+    &:hover a {
+        color: $light;
+    }
 }
 
 .image {
     margin-top: 4rem;
+
 }
 
 .pacman {
@@ -157,53 +273,54 @@ export default {
     animation-iteration-count: infinite;
 }
 
-
-.card:hover {
-    background: rgb(250 188 47 / 50%);
-    border: 1px solid rgb(245 166 6 / 50%);
-    transform: scale(1.05);
-    box-shadow: 12px 17px 51px rgb(250 188 47 / 50%);
-}
-
-
-.card:hover>p {
-    display: block;
-    color: $secondary;
-    transform: scale(1.05);
-}
-
-.card:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-}
-
-
-.middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.card:hover .image {
-    opacity: 0.3;
-}
-
-.card:hover .middle {
-    opacity: 1;
-}
-
 .text {
-    background-color: $light;
-    color: $secondary;
-    font-size: 16px;
-    padding: 16px 32px;
-    display: block;
-    transform: scale(1.05);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $light;
+    font-size: 20px;
+    cursor: pointer;
+
+
 }
+
+#restaurant_cards {
+    height: 100vh;
+    padding: 4rem;
+}
+
+.col-4,
+.col-3 {
+    position: relative;
+
+    img {
+        height: 350px;
+        width: 250px;
+    }
+
+    .card-body {
+        display: none;
+        position: absolute;
+        width: 250px;
+        height: 100%;
+        top: 0;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &:hover .card-body {
+        display: block;
+        background-color: rgb(0 0 0 / 69%);
+    }
+}
+
+
+
+
 
 //Pac-Man Mouth Animation//
 
