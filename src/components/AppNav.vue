@@ -189,14 +189,15 @@ a.nav-link {
 .navbar-collapse {
     max-width: fit-content;
 
-.search_icon,
-.cart_icon {
-    color: $dark !important;
-    position: relative;
+    .search_icon,
+    .cart_icon {
+        color: $dark !important;
+        position: relative;
 
-    svg:hover {
-        color: $secondary !important;
+        svg:hover {
+            color: $secondary !important;
+        }
+
     }
-
 }
 </style>
