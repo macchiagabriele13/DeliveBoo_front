@@ -180,7 +180,7 @@ export default {
     height: 100px;
     text-align: center;
     transition: 1s;
-    z-index: 10;
+    z-index: 2;
 }
 
 .container .card:hover .contentBx {

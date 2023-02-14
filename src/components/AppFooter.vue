@@ -7,7 +7,7 @@ export default {
 <template>
     <!-- footer -->
     <footer class="bg_footer">
-        <section class="border-bottom border-dark border-1" id="footer_top">
+        <section class="border_bottom" id="footer_top">
             <div class="container">
                 <div class="row text-center">
                     <div class="col text-white">
@@ -102,6 +102,11 @@ export default {
     background-image: url('../../public/img/footer_bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.border_bottom {
+    border-bottom: 1px solid rgb(255 248 248 / 46%);
+    ;
 }
 
 .hover_red_mail {
