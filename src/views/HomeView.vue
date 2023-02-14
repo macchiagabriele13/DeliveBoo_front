@@ -42,6 +42,7 @@ export default {
         </section>
         <!-- cards tipi ristorante -->
         <section id="restaurant_cards">
+            <h1 class="text-center my-5">Esplora per categoria</h1>
             <div class="container">
                 <div class="row">
                     <div class="col-3 d-flex justify-content-center">
@@ -114,6 +115,10 @@ export default {
 @import '../styles/_variables';
 @import url('https://fonts.cdnfonts.com/css/pac-font');
 
+h1 {
+    color: $primary;
+}
+
 button {
     font-family: 'Poppins', sans-serif;
     letter-spacing: 2px;
@@ -126,6 +131,7 @@ button {
     z-index: 2;
     transition: 0.01s 0.23s ease-out all;
     overflow: hidden;
+    max-height: 100%;
 }
 
 button:before {
