@@ -164,7 +164,7 @@ export default {
                             <img src="../../public/img/delivery-time-contacts.webp" class="card-img" alt="...">
                             <div
                                 class="card-img-overlay d-flex justify-content-center align-items-start flex-column w-50">
-                                <h2 class="card-title">Tempo di spedizione</h2>
+                                <h2 class="card-title">Orari di consegna</h2>
                                 <p class="card-text border-bottom border-2">Noi trasportiamo il tuo cibo entro 30
                                     minuti.</p>
                                 <h6>Lunedì - Sabato</h6>
