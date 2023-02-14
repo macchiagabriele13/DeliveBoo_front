@@ -36,6 +36,13 @@ export default {
             localStorage.setItem('plates', JSON.stringify(store.cart));
         },
 
+        resetCart() {
+            store.cart.plates.plates = [];
+            store.cart.plates.prices = [];
+            store.cart.quantity = [];
+            localStorage.clear();
+        },
+
         getPrice() {
             let price = 0;
             for (let i = 0; i < store.cart.quantity.length; i++) {
@@ -95,10 +102,10 @@ export default {
                                         <span>+</span>
                                     </button>
 
-                                    <button id="changeQty" class="ajaxcart__qty-remove remove-btn  dt-sc-btn"
+                                    <!-- <button id="changeQty" class="ajaxcart__qty-remove remove-btn  dt-sc-btn"
                                         @click.preventDefault()="deletePlate(plate)">
                                         <font-awesome-icon icon="fa-solid fa-trash" />
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
@@ -106,6 +113,9 @@ export default {
 
                     <li v-else>Nessun articolo nel carrello</li>
                 </ul>
+
+                <div class="remove_all text-end" @click.preventDefault()="resetCart()">Rimuovi tutto</div>
+
                 <div class="ajaxcart__footer row">
                     <div class="subtotal">
                         <p class="title">Totale</p>
@@ -149,6 +159,14 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/general.scss';
 @import '../styles/_variables';
+
+.remove_all {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
 
 #CartDrawer {
     overflow: visible;
