@@ -287,7 +287,6 @@ button:hover:after {
 }
 
 #restaurant_cards {
-    height: 100vh;
     padding: 4rem;
 }
 
@@ -298,6 +297,8 @@ button:hover:after {
     img {
         height: 350px;
         width: 250px;
+        object-fit: cover;
+        object-position: center;
     }
 
     .card-body {
