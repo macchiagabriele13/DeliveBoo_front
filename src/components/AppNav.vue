@@ -201,10 +201,4 @@ a.nav-link {
     }
 
 }
-
-@media screen and (max-width: 768px) {
-    .phone_icon {
-        display: none;
-    }
-}
 </style>
