@@ -86,7 +86,10 @@ export default {
                                                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                                         </svg>
                                     </a>
-                                    <a class="cart_icon" v-if="cartOn === 'true' ? 'active' : 'static'" href="#">
+                                    <a class="cart_icon" href="#">
+                                        <div class="point" :class="store.cart.quantity.length !== 0 ? '' : 'd-none'">
+
+                                        </div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="$dark"
                                             class="bi bi-cart3 ms-1" viewBox="0 0 16 16"
                                             @click.preventDefault="store.toggleCart()">
@@ -156,9 +159,14 @@ export default {
 @use '../styles/general.scss';
 @import '../styles/_variables';
 
-.active {
+.point {
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: $secondary;
-
+    border-radius: 25px;
+    height: 5px;
+    width: 5px;
 }
 
 nav {
@@ -215,5 +223,15 @@ a.nav-link {
         }
     }
 
+}
+
+.search_icon,
+.cart_icon {
+    color: $dark !important;
+    position: relative;
+
+    svg:hover {
+        color: $secondary !important;
+    }
 }
 </style>
