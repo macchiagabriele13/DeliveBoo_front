@@ -38,20 +38,12 @@ export default {
                 </div>
                 <div class="card-action">
                     <h6>{{ plate.price + ' €' }}</h6>
-                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" href="#"
+                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2"
                         role="button" @click.preventDefault()="store.addToCart(plate)">Add to Cart</button>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 </template>
 
 <style lang="scss" scoped>
