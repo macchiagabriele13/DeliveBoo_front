@@ -200,4 +200,10 @@ a.nav-link {
 
     }
 }
+
+
+.cart_icon {
+    color: $dark !important;
+    position: relative;
+}
 </style>
