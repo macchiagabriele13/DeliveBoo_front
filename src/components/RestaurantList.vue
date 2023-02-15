@@ -132,16 +132,7 @@ export default {
     <section class="vue-home pt-5">
         <div class="container">
             <div class="d-flex filters flex-md-nowrap flex-wrap gap-1 justify-content-lg-center">
-                <button class="cta btn_search">
-                    <span class="hover-underline-animation" @click.preventDefault()="resetFilters()">Tutti
-                    </span>
-                    <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg"
-                        id="arrow-horizontal">
-                        <path transform="translate(30)"
-                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10"
-                            id="Path_10"></path>
-                    </svg>
-                </button>
+
 
                 <div class="align-items-lg-center align-items-md-center d-lg-flex d-md-flex filter_button flex-lg-row flex-md-column justify-content-md-center p-2 rounded-pill"
                     :class="store.selected.includes(tipo.name) ? 'bg_success' : 'bg_orange'" v-for="tipo in types"
@@ -163,13 +154,24 @@ export default {
                 </button>
             </div>
 
+            <button class="cta btn_search_all w-100">
+                <span class="hover-underline-animation" @click.preventDefault()="resetFilters()">
+                    <img class="img-fluid" src="../../public/img/restaurant-icon.png" alt="">
+                    Tutti i ristoranti
+                </span>
+                <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg"
+                    id="arrow-horizontal">
+                    <path transform="translate(30)"
+                        d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10"
+                        id="Path_10"></path>
+                </svg>
+            </button>
             <div class=" text-center" v-if="loading">
                 <div class="loading">
                     <img src="../../public/img/pacman.gif" alt="">
                 </div>
                 <h6>Caricamento...</h6>
             </div>
-
             <div v-else-if="restaurants.data.length !== 0">
                 <div class="g-4 row row-cols-1 row-cols-lg-2 row-cols-md-2 row-cols-sm-3 row-cols-xl-3">
                     <RestaurantCard :restaurant="restaurant" v-for="restaurant in restaurants.data" />
@@ -236,7 +238,11 @@ export default {
 
 
 
-
+.container {
+    .row {
+        margin-bottom: 5rem;
+    }
+}
 
 
 .restaurant {
@@ -249,7 +255,7 @@ export default {
 }
 
 .filters {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 
     .filter_button {
         cursor: pointer;
@@ -285,8 +291,17 @@ export default {
     }
 }
 
+.btn_search_all {
+    margin-bottom: 3rem;
+    border: none;
+
+    img {
+        width: 25px;
+    }
+}
+
 .cta {
-    border: 1px solid #f5a6063d;
+    border: none;
     background: none;
     border-radius: 25px;
 }
@@ -322,7 +337,7 @@ export default {
 .hover-underline-animation:after {
     content: "";
     position: absolute;
-    width: 80%;
+    width: 90%;
     transform: scaleX(0);
     height: 2px;
     bottom: 0;
