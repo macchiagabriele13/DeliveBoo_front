@@ -1,6 +1,8 @@
 <script>
-import axios from 'axios'
-import RestaurantCard from './RestaurantCard.vue'
+import axios from 'axios';
+import { store } from '../store.js';
+
+import RestaurantCard from './RestaurantCard.vue';
 
 export default {
     components: {
@@ -9,12 +11,11 @@ export default {
     name: 'RestaurantList',
     data() {
         return {
-            base_api_url: 'http://localhost:8000',
+            store,
             restaurants: [],
             types: [],
-            selected: [],
             error: null,
-            loading: true,
+            loading: true
         }
     },
     methods: {
@@ -24,13 +25,15 @@ export default {
                 .then(response => {
                     // console.log(response.data.results);
                     this.restaurants = response.data.results;
-                    this.loading = false
+                    this.loading = false;
                 })
                 .catch(error => {
-                    console.error(error)
-                    this.error = error.message
+                    console.error(error);
+                    this.error = error.message;
+                    this.loading = false;
                 })
         },
+
         getTypes(url) {
             axios.get(url)
                 .then(response => {
@@ -41,145 +44,175 @@ export default {
                     console.error(error);
                 })
         },
+
         searchRestaurants() {
-            if (this.selected.length !== 0) {
-                const types = this.selected.join('+');
+            if (store.selected.length !== 0) {
+                const types = store.selected.join('+');
                 // console.log(types);
-                this.getRestaurantsFiltered(this.base_api_url + '/api/restaurants/filter/' + types);
+                this.getRestaurantsFiltered(store.base_api_url + '/api/restaurants/filter/' + types);
             } else {
-                this.getRestaurants(this.base_api_url + '/api/restaurants');
+                this.getRestaurants(store.base_api_url + '/api/restaurants');
             }
         },
+
         getRestaurantsFiltered(url) {
             axios
                 .get(url)
                 .then(response => {
+                    // console.log(response.data.results);
                     if (response.data.success) {
-                        // console.log(response.data.results);
                         this.restaurants.data = response.data.results;
-                        this.loading = false
+                        this.loading = false;
                     } else {
                         this.restaurants.data = [];
+                        this.loading = false;
                     }
                 })
                 .catch(error => {
-                    console.error(error)
-                    this.error = error.message
-
+                    console.error(error);
+                    this.error = error.message;
                 })
         },
 
         toggleButton(id) {
-            if (!this.selected.includes(id)) {
-                this.selected.push(id);
-                // console.log(this.selected);
+            if (!store.selected.includes(id)) {
+                store.selected.push(id);
+                // console.log(store.selected);
             } else {
-                // const del = element => element === id
-                const toDel = this.selected.indexOf(id)
+                // const del = element => element === id;
+                const toDel = store.selected.indexOf(id);
                 // console.log(toDel);
-                this.selected.splice(toDel, 1)
-                // console.log(this.selected);
+                store.selected.splice(toDel, 1);
+                // console.log(store.selected);
             }
+        },
+
+        resetFilters() {
+            store.selected = [];
+            this.getRestaurants(store.base_api_url + '/api/restaurants');
         },
 
         getImagePath(path) {
             console.log(path);
             if (path) {
-                return this.base_api_url + '/storage/' + path
+                return store.base_api_url + '/storage/' + path;
             }
-            return '/img/Food-placeholder.jpg'
+            return '/img/Food-placeholder.jpg';
         },
+
         prevPage(url) {
-            console.log(url)
-            this.getRestaurant(url)
+            console.log(url);
+            this.getRestaurant(url);
         },
+
         nextPage(url) {
-            console.log(url)
-            this.getRestaurant(url)
+            console.log(url);
+            this.getRestaurant(url);
+        },
+
+        toPage(page) {
+            console.log(store.base_api_url + '/api/restaurants?page=' + page);
+            this.getRestaurants(store.base_api_url + '/api/restaurants?page=' + page);
         }
 
     },
     mounted() {
-        this.getRestaurants(this.base_api_url + '/api/restaurants');
-        this.getTypes(this.base_api_url + '/api/types');
+        // console.log(store.selected);
+        this.getTypes(store.base_api_url + '/api/types');
+        if (store.selected.length !== 0) {
+            this.searchRestaurants();
+        } else {
+            this.getRestaurants(store.base_api_url + '/api/restaurants');
+        }
     }
 }
 </script>
 
 <template>
     <section class="vue-home pt-5">
-
         <div class="container">
-            <div v-if="restaurants && !loading">
-                <div class="d-flex filters flex-md-nowrap flex-wrap gap-1 justify-content-lg-center">
-                    <div class="align-items-lg-center align-items-md-center d-lg-flex d-md-flex filter_button flex-lg-row flex-md-column justify-content-md-center p-2 rounded-pill"
-                        :class="selected.includes(tipo.name) ? 'bg_success' : 'bg_orange'" v-for="tipo in types"
-                        @click.preventDefault()="toggleButton(tipo.name)">
-                        <img class="img-fluid " src="../../public/img/restaurant.png" alt="">
-                        {{ tipo.name }}
-                    </div>
+            <div class="d-flex filters flex-md-nowrap flex-wrap gap-1 justify-content-lg-center">
+                <button class="cta btn_search">
+                    <span class="hover-underline-animation" @click.preventDefault()="resetFilters()">Tutti
+                    </span>
+                    <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg"
+                        id="arrow-horizontal">
+                        <path transform="translate(30)"
+                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10"
+                            id="Path_10"></path>
+                    </svg>
+                </button>
 
-                    <!-- <button class="btn btn-primary" @click.preventDefault()="searchRestaurants()">Cerca</button> -->
-                    <button class="cta btn_search">
-                        <span class="hover-underline-animation" @click.preventDefault()="searchRestaurants()">Cerca
-                        </span>
-                        <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg"
-                            id="arrow-horizontal">
-                            <path transform="translate(30)"
-                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                                data-name="Path 10" id="Path_10"></path>
-                        </svg>
-                    </button>
+                <div class="align-items-lg-center align-items-md-center d-lg-flex d-md-flex filter_button flex-lg-row flex-md-column justify-content-md-center p-2 rounded-pill"
+                    :class="store.selected.includes(tipo.name) ? 'bg_success' : 'bg_orange'" v-for="tipo in types"
+                    @click.preventDefault()="toggleButton(tipo.name)">
+                    <img class="img-fluid " src="../../public/img/restaurant.png" alt="">
+                    {{ tipo.name }}
                 </div>
 
-                <div class="g-4 row row-cols-1 row-cols-lg-2 row-cols-md-2 row-cols-sm-3 row-cols-xl-3">
-
-
-
-                    <RestaurantCard :restaurant="restaurant" v-for="restaurant in restaurants.data">
-                    </RestaurantCard>
-
-
-
-                </div>
-                <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
-                    <ul class="pagination">
-                        <li class="page-item" v-if="restaurants.prev_page_url"
-                            @click="prevPage(restaurants.prev_page_url)">
-                            <a class="page-link" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-                            restaurants.current_page
-                        }}</a></li>
-
-                        <li class="page-item" v-if="restaurants.next_page_url"
-                            @click="nextPage(restaurants.next_page_url)">
-                            <a class="page-link" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
+                <!-- <button class="btn btn-primary" @click.preventDefault()="searchRestaurants()">Cerca</button> -->
+                <button class="cta btn_search">
+                    <span class="hover-underline-animation" @click.preventDefault()="searchRestaurants()">Cerca
+                    </span>
+                    <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg"
+                        id="arrow-horizontal">
+                        <path transform="translate(30)"
+                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10"
+                            id="Path_10"></path>
+                    </svg>
+                </button>
             </div>
-            <div class=" text-center" v-else-if="loading">
+
+            <div class=" text-center" v-if="loading">
                 <div class="loading">
                     <img src="../../public/img/pacman.gif" alt="">
                 </div>
-                <h6>Loading...</h6>
+                <h6>Caricamento...</h6>
             </div>
+
+            <div v-else-if="restaurants.data.length !== 0">
+                <div class="g-4 row row-cols-1 row-cols-lg-2 row-cols-md-2 row-cols-sm-3 row-cols-xl-3">
+                    <RestaurantCard :restaurant="restaurant" v-for="restaurant in restaurants.data" />
+                </div>
+
+                <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5"
+                    v-if="restaurants.last_page !== 1">
+                    <ul class="pagination d-flex gap-1">
+                        <li class="page-item">
+                            <button class="page-link" :class="restaurants.prev_page_url ? '' : 'disabled'"
+                                aria-label="Previous" @click="prevPage(restaurants.prev_page_url)">
+                                <span aria-hidden="true">&laquo;</span>
+                            </button>
+                        </li>
+
+                        <li class="page-item active" aria-current="page" v-if="restaurants.last_page <= 3"
+                            v-for="i in restaurants.last_page">
+                            <button class="page-link" href="#" @click="toPage(i)">
+                                {{ restaurants.current_page }}
+                            </button>
+                        </li>
+
+                        <li class="page-item active" aria-current="page" v-else v-for="i in 3">
+                            <button class="page-link" href="#" @click="toPage(i)">
+                                {{ restaurants.current_page }}
+                            </button>
+                        </li>
+
+                        <li class="page-item">
+                            <button class="page-link" aria-label="Next" @click="nextPage(restaurants.next_page_url)"
+                                :class="restaurants.next_page_url ? '' : 'disabled'">
+                                <span aria-hidden="true">&raquo;</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
             <div v-else>
                 <p>Non sono presenti ristoranti</p>
             </div>
         </div>
     </section>
-
-
-
-
-
 </template>
 
 <style lang="scss" scoped>
