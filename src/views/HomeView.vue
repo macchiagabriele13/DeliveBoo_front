@@ -1,6 +1,31 @@
 <script>
+import axios from 'axios';
+import { store } from '../store.js';
+
 export default {
-    name: 'HomeView'
+    name: 'HomeView',
+    data() {
+        return {
+            types: [],
+            store
+        }
+    },
+    methods: {
+        setSelected(type) {
+            store.selected = [];
+            store.selected.push(type);
+        }
+    },
+    mounted() {
+        axios.get(store.base_api_url + '/api/types')
+            .then(response => {
+                // console.log(response.data.results);
+                this.types = response.data.results;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 }  
 </script>
 
@@ -44,7 +69,7 @@ export default {
         <section id="restaurant_cards">
             <h1 class="text-center my-5">Esplora per categoria</h1>
             <div class="container">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-3 d-flex justify-content-center">
                         <img src="../../public/img/pizza.jpeg" alt="restaurant_image" class="img-fluid">
                         <div class="card-body">
@@ -81,7 +106,7 @@ export default {
                 <div class="row mt-5 d-flex justify-content-center">
                     <div class="col-3 d-flex justify-content-center">
                         <img src="../../public/img/hamburger.jpeg" alt="restaurant_image" class="img-fluid">
-                        <div class="card-body" @click.preventDefault()="searchRestaurants()">
+                        <div class="card-body">
                             <a href="">
                                 <div class="text">Hamburger</div>
                             </a>
@@ -101,6 +126,17 @@ export default {
                             <a href="">
                                 <div class="text">Kebab</div>
                             </a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="row mt-5 d-flex justify-content-center gy-5">
+                    <div class="col-3 d-flex justify-content-center" v-for="tipo in types">
+                        <img src="../../public/img/hamburger.jpeg" alt="restaurant_image" class="img-fluid">
+                        <div class="card-body">
+                            <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(tipo.name)">
+                                <div class="text">{{ tipo.name }}</div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
