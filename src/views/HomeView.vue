@@ -132,7 +132,7 @@ export default {
 
                 <div class="row mt-5 d-flex justify-content-center gy-5">
                     <div class="col-3 d-flex justify-content-center" v-for="tipo in types">
-                        <img src="../../public/img/hamburger.jpeg" alt="restaurant_image" class="img-fluid">
+                        <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image" class="img-fluid">
                         <div class="card-body">
                             <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(tipo.name)">
                                 <div class="text">{{ tipo.name }}</div>
