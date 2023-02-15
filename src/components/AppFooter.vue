@@ -138,4 +138,18 @@ export default {
     }
 
 }
+
+@media screen and (max-width: 767px) {
+    .border_bottom {
+        .row {
+            flex-direction: column;
+        }
+    }
+
+    .footer_bottom {
+        p {
+            font-size: 10px;
+        }
+    }
+}
 </style>

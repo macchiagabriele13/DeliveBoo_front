@@ -20,10 +20,14 @@ export default {
                 <div class="container">
                     <div class="row w-100">
                         <div class="content_top d-flex justify-content-between align-items-center">
+                            <a class="delivery_man ms-4" href="#">
+                                <img class="w-75" src="../../public/img/delivery-man.png" alt="">
+                            </a>
                             <div class="content_left p-1">
-                                <a class="text-decoration-none border-0" href="#"><span
-                                        class="text-danger fw-bold fs-5">Consegna gratuita</span> per ordini superiori
-                                    ai 10€</a>
+                                <a class="text-decoration-none border-0" href="#">
+                                    <span class="text-danger fw-bold fs-5">Consegna gratuita</span>
+                                    per ordini superiori ai 10€
+                                </a>
                             </div>
                             <div class="d-flex">
                                 <div class="icon me-3">
@@ -152,6 +156,9 @@ a.nav-link {
 }
 
 .content_top {
+    .delivery_man {
+        display: none;
+    }
 
     .content_left {
         a {
@@ -161,6 +168,8 @@ a.nav-link {
         a:hover {
             color: red;
         }
+
+
     }
 
     .content_right {
@@ -205,5 +214,17 @@ a.nav-link {
 .cart_icon {
     color: $dark !important;
     position: relative;
+}
+
+@media screen and (max-width: 767px) {
+
+    .content_left a,
+    .phone_icon {
+        display: none;
+    }
+
+    .content_top .delivery_man {
+        display: block;
+    }
 }
 </style>
