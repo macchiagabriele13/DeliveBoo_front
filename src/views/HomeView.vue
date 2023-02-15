@@ -69,85 +69,15 @@ export default {
             <h1 class="text-center my-5">Esplora per categoria</h1>
             <div class="container">
                 <div class="row g-5">
-                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                        <div class="card_image">
-                            <img src="../../public/img/pizza.jpeg" alt="restaurant_image" class="img-fluid">
-                            <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(pizza)">
-                                    <div class="text">Pizza</div>
-                                </router-link>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                        <div class="card_image">
-                            <img src="../../public/img/donuts.jpeg" alt="restaurant_image" class="img-fluid">
-                            <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(dolci)">
-                                    <div class="text">Dolci</div>
-                                </router-link>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                        <div class="card_image">
-                            <img src="../../public/img/sushi.jpeg" alt="restaurant_image" class="img-fluid">
-                            <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(sushi)">
-                                    <div class="text">Sushi</div>
-                                </router-link>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                        <div class="card_image">
-                            <img src="../../public/img/american.jpeg" alt="restaurant_image" class="img-fluid">
-                            <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }"
-                                    @click.preventDefault()="setSelected(americano)">
-                                    <div class="text">Americano</div>
-                                </router-link>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                        <div class="card_image">
-                            <img src="../../public/img/hamburger.jpeg" alt="restaurant_image" class="img-fluid">
-                            <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }"
-                                    @click.preventDefault()="setSelected(hamburger)">
-                                    <div class="text">Hamburger</div>
-                                </router-link>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                        <div class="card_image">
-                            <img src="../../public/img/pasta.jpeg" alt="restaurant_image" class="img-fluid">
-                            <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }"
-                                    @click.preventDefault()="setSelected(italiano)">
-                                    <div class="text">Italiano</div>
-                                </router-link>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                        <div class="card_image">
-                            <img src="../../public/img/kebab.jpeg" alt="restaurant_image" class="img-fluid">
-                            <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(kebab)">
-                                    <div class="text">Kebab</div>
-                                </router-link>
-                            </div>
-                        </div>
-
+                    <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center" v-for="tipo in types">
+                      <div class="card_image">
+                          <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image" class="img-fluid">
+                          <div class="card-body">
+                            <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(tipo.name)">
+                                <div class="text">{{ tipo.name }}</div>
+                            </router-link>
+                          </div>
+                      </div>
                     </div>
                 </div>
             </div>
