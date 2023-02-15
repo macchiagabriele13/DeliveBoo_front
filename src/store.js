@@ -3,6 +3,8 @@ import { reactive } from 'vue';
 export const store = reactive({
     cartOn: false,
     modalCartEnabled: false,
+    base_api_url: 'http://localhost:8000',
+    selected: [],
     cart: {
         restaurant: 0,
         plates: {
