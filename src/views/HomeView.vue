@@ -35,7 +35,15 @@ export default {
         <section id="home" class="bg_orange">
             <div class="container h-100 d-flex">
                 <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
-
+                <div class="title_small">
+                    <a href="#restaurant_cards">
+                        <h1>Ordina Ora!</h1>
+                    </a>
+                    <p>
+                        Ordina online dai tuoi ristoranti preferiti
+                    </p>
+                </div>
+                <!-- responsive small -->
                 <button class="btn pt-4 border-0 btn_title">
                     <div class="title">
                         <a href="#restaurant_cards">
@@ -45,6 +53,7 @@ export default {
                             Ordina online dai tuoi ristoranti preferiti
                         </p>
                     </div>
+
                 </button>
 
 
@@ -68,16 +77,18 @@ export default {
         <section id="restaurant_cards">
             <h1 class="text-center my-5">Esplora per categoria</h1>
             <div class="container">
-                <div class="row g-5">
+                <div class="row g-3 g-md-4">
                     <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center" v-for="tipo in types">
-                      <div class="card_image">
-                          <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image" class="img-fluid">
-                          <div class="card-body">
-                            <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(tipo.name)">
-                                <div class="text">{{ tipo.name }}</div>
-                            </router-link>
-                          </div>
-                      </div>
+                        <div class="card_image">
+                            <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image"
+                                class="img-fluid">
+                            <div class="card-body">
+                                <router-link :to="{ name: 'restaurants' }"
+                                    @click.preventDefault()="setSelected(tipo.name)">
+                                    <div class="text">{{ tipo.name }}</div>
+                                </router-link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,12 +220,41 @@ button:hover:after {
     }
 }
 
+.title_small {
+    display: none;
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        font-size: 100px;
+        color: $light;
+    }
+
+    p {
+        color: $light;
+        margin-top: 2rem;
+        font-size: 25px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark;
+        transition: 0.2s 0.02s ease-in all;
+
+    }
+
+    &:hover a {
+        color: $light;
+    }
+}
+
 .image {
     margin-top: 4rem;
 
 }
 
 .pacman {
+    display: none;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -376,9 +416,39 @@ button:hover:after {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+
+    #home {
+        background-image: none;
+
+        .container {
+            padding-top: 4rem;
+            align-items: flex-start;
+
+            .title_small {
+                display: block;
+
+                h1 {
+                    font-size: 80px;
+                }
+            }
+
+            .pacman {
+                display: block;
+                z-index: 2;
+                bottom: 10%;
+            }
+
+            .btn_title {
+                display: none;
+            }
+
+
+        }
+    }
+
     .row {
-        .category {
+        .category .card_image {
             img {
                 height: 150px;
             }
@@ -386,27 +456,34 @@ button:hover:after {
     }
 }
 
-@media screen and (max-width: 425px) {
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
     #home {
-        background-image: none;
+        background-position: right bottom;
+    }
 
-        .container {
-            padding-top: 2rem;
-            align-items: flex-start;
+    #home .container {
+        align-items: flex-start;
+        justify-content: center;
 
-            .title {
-                h1 {
-                    font-size: 60px;
-                }
-            }
+        .btn_title {
+            margin-top: 8rem;
+        }
 
-            .pacman {
-                z-index: 2;
-                bottom: 10%;
-            }
+    }
+
+    .title {
+        h1 {
+            font-size: 60px;
         }
     }
 
-
+    .row {
+        .category .card_image {
+            img {
+                height: 250px;
+            }
+        }
+    }
 }
 </style>
