@@ -12,20 +12,21 @@ export default {
     <!-- banner -->
     <section id="banner_contacts">
         <div class="container-fluid bg_orange">
-            <div class="container d-flex align-items-center justify-content-center justify-content-around">
+            <div class="container d-flex align-items-center justify-content-center justify-content-around h-100 w-100">
                 <h1 class="fs_custom">Contatti</h1>
-                <img height="400" src="../../public/img/pac-man-contacts.png" alt="">
+                <img class="responsive_image" src="../../public/img/pac-man-contacts.png" alt="">
             </div>
         </div>
     </section>
     <!-- info contatti -->
     <section class="bg_contacts" id="contacts_info">
         <div
-            class="container d-flex justify-content-center mt_custom flex-column align-items-center border-bottom border-2 w-75">
+            class="container d-flex justify-content-center mt_custom align-items-center border_bottom border-2 w-md-100 w-xl-75">
             <!-- assistenza ordini online -->
             <div class="row">
-                <h2>Assistenza ordini</h2>
-                <div class="col-4 border-end border-2 mt-2 p-3 mb-5 d-flex">
+                <h2 class="pe_custom ms-sm-3 ms-md-0">Assistenza ordini</h2>
+                <div
+                    class="col-4 col-s-4 col-s-12 border_end ms-sm-3 ms-md-0 border-xl-2 mt-2 p-sm-2 p-md-3 mb-3 d-flex">
                     <div class="phone_image d-flex align-items-center me-3 pb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="currentColor" class="bi bi-phone"
                             viewBox="0 0 16 16">
@@ -36,10 +37,10 @@ export default {
                     </div>
                     <div class="online_order_number lh-1 d-flex flex-column justify-content-center">
                         <p>Chiamaci</p>
-                        <h5>0000-123-456789</h5>
+                        <h6>0000-123-456789</h6>
                     </div>
                 </div>
-                <div class="col-4 ms-4 mt-2 p-3 mb-5 d-flex">
+                <div class="col-4 col-s-4 col-s-12 ms-sm-3 ms-md-0 ms-lg-4 mt-2 p-sm-2 p-md-3 mb-3 d-flex">
                     <div class="mail_image d-flex align-items-center me-3 pb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="currentColor" class="bi bi-envelope"
                             viewBox="0 0 16 16">
@@ -49,23 +50,23 @@ export default {
                     </div>
                     <div class="online_order_mail lh-1 d-flex flex-column justify-content-center">
                         <p>Inviaci una mail</p>
-                        <h5>info@example.com</h5>
+                        <h6>info@example.com</h6>
                     </div>
                 </div>
-                <div class="col-3 ms-4">
-                    <div class="online_order_mail invisible">
+                <div class="col-3 col-s-3 col-s-12 ms-sm-3 ms-md-0 ms-lg-4">
+                    <div class="online_order_mail d-none d-lg-block invisible">
                         <p>Noi siamo qui</p>
-                        <h5>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</h5>
+                        <h6>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</h6>
                     </div>
                 </div>
             </div>
         </div>
         <div
-            class="container d-flex justify-content-center mt-5 flex-column align-items-center border-bottom border-2 w-75">
+            class="container d-flex justify-content-center mt-5 flex-column align-items-center border_bottom border-2 w-md-100 w-lg-75">
             <!-- ritiro in negozio -->
             <div class="row">
-                <h2>Ritiro in negozio</h2>
-                <div class="col-4 border-end border-2 mt-2 p-3 mb-5 d-flex">
+                <h2 class="ms-sm-2 ms-md-0">Ritiro in negozio</h2>
+                <div class="col-4 col-s-4 col-s-12 border_end border-2 ms-sm-3 ms-md-0 mt-2 p-sm-2 p-md-3 mb-3 d-flex">
                     <div class="phone_image d-flex align-items-center me-3 pb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="currentColor" class="bi bi-phone"
                             viewBox="0 0 16 16">
@@ -76,10 +77,11 @@ export default {
                     </div>
                     <div class="store_pickup_number lh-1 d-flex flex-column justify-content-center">
                         <p>Chiamaci</p>
-                        <h5>0000-123-456789</h5>
+                        <h6>0000-123-456789</h6>
                     </div>
                 </div>
-                <div class="col-4 ms-4 border-end border-2 mt-2 p-3 mb-5 d-flex">
+                <div
+                    class="col-4 col-s-4 col-s-12 ms-sm-3 ms-md-0 ms-lg-4 border_end border-2 mt-2 p-sm-2 p-md-3 mb-3 d-flex">
                     <div class="mail_image d-flex align-items-center me-3 pb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="currentColor" class="bi bi-envelope"
                             viewBox="0 0 16 16">
@@ -89,10 +91,10 @@ export default {
                     </div>
                     <div class="store_pickup_mail lh-1 d-flex flex-column justify-content-center">
                         <p>Inviaci una mail</p>
-                        <h5>info@example.com</h5>
+                        <h6>info@example.com</h6>
                     </div>
                 </div>
-                <div class="col-3 ms-4 mt-2 p-3 mb-5 d-flex">
+                <div class="col-3 col-s-3 col-s-12 ms-sm-3 ms-md-0 ms-lg-4 mt-2 p-sm-2 p-md-3 mb-3 d-flex">
                     <div class="address_image d-flex align-items-center me-3 pb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="currentColor" class="bi bi-geo-alt"
                             viewBox="0 0 16 16">
@@ -103,7 +105,7 @@ export default {
                     </div>
                     <div class="store_pickup_address lh-1 d-flex flex-column justify-content-center">
                         <p>Noi siamo qui</p>
-                        <h5>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</h5>
+                        <h6>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</h6>
                     </div>
                 </div>
             </div>
@@ -112,17 +114,17 @@ export default {
     </section>
     <!-- form contatti -->
     <section id="contacts_form">
-        <div class="container mt-5 pt-5 w-75">
-            <div class="row">
+        <div class="container mt-4 pt-5 w-md-100 w-xl-75">
+            <div class="row contacts_container">
                 <h2 class="mb-5">Contattaci</h2>
-                <div class="col">
+                <div class="col col-s-12">
                     <div class="form form_bg p-5 rounded-4 mb-4">
 
                         <div v-if="success" class="alert alert-success" role="alert">
                             Messaggio inviato con successo!
                         </div>
 
-                        <form>
+                        <form class="d-flex justify-content-center flex-column">
                             <div class="mb-5">
                                 <input type="text" name="name" id="name" v-model="name" class="form-control p-3"
                                     placeholder="Nome" aria-describedby="fullNameHelper">
@@ -158,7 +160,7 @@ export default {
                         </form>
                     </div>
                 </div>
-                <div class="col delivery">
+                <div class="col col-s-12 delivery">
                     <div class="delivery_time">
                         <div class="card text-bg-light">
                             <img src="../../public/img/delivery-time-contacts.webp" class="card-img" alt="...">
@@ -180,7 +182,7 @@ export default {
     </section>
 
     <section id="map">
-        <div class="google_map d-flex justify-content-center mt-4 mb-5">
+        <div class="google_map d-flex justify-content-center ms-3 me-3 mt-4 mb-5">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190029.01773433204!2d12.395913405746331!3d41.90998597310972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma%20RM!5e0!3m2!1sit!2sit!4v1675980617138!5m2!1sit!2sit"
                 width="1150" height="600" style="border:0;" allowfullscreen="" loading="lazy"
@@ -199,18 +201,25 @@ export default {
     background-color: orange;
 }
 
+.responsive_image {
+    width: 100%;
+    height: auto;
+}
+
 .bg_contacts {
     background-image: url('../../public/img/contact_layout_bg.webp');
-    background-size: cover;
     background-repeat: no-repeat;
 }
 
-.col-3:hover,
-.col-4:hover {
+.col-3,
+.col-4 {
     svg {
         color: orange;
-        cursor: default;
     }
+}
+
+.border_bottom {
+    border-bottom: 1px solid grey;
 }
 
 .form_bg {
@@ -228,14 +237,191 @@ export default {
 }
 
 .mt_custom {
-    margin-top: 6rem;
+    margin-top: 4rem;
+}
+
+.pe_custom {
+    padding-right: 3.8rem;
 }
 
 .padding_custom {
-    padding: 1rem 14rem;
+    padding: 1rem 0;
 }
 
 p {
     font-size: 1rem;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .bg_contacts {
+        background-size: contain;
+    }
+
+    .contacts_container {
+        flex-direction: column;
+    }
+
+    .fs_custom {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    /* For Tablets */
+    .bg_contacts {
+        background-size: contain;
+    }
+
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+
+    .border_end {
+        border-right: 0;
+    }
+
+    .contacts_container {
+        flex-direction: column;
+    }
+
+    .fs_custom {
+        font-size: 3rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+    .border_end {
+        border-right: 1px solid grey;
+    }
+
+    .contacts_container {
+        flex-direction: column;
+    }
+
+    .fs_custom {
+        font-size: 3.5rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .bg_contacts {
+        background-size: cover;
+    }
+
+    .contacts_container {
+        flex-direction: row;
+    }
+
+    .fs_custom {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .bg_contacts {
+        background-size: cover;
+    }
 }
 </style>
