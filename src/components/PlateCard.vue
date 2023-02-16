@@ -39,7 +39,7 @@ export default {
                 <div class="card-action">
                     <h6>{{ plate.price + ' €' }}</h6>
                     <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2"
-                        role="button" @click.preventDefault()="store.addToCart(plate)">Add to Cart</button>
+                        role="button" @click.preventDefault()="store.addToCart(plate)">Aggiungi al Carrello</button>
                 </div>
             </div>
         </div>
