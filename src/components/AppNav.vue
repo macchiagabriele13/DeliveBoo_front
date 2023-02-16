@@ -20,6 +20,7 @@
 
 
 
+
 import { store } from '../store.js';
 
 export default {
@@ -103,7 +104,7 @@ export default {
                                         </ul>
                                     </div>
                                 </div>
-
+                            </div>
 
                             <div class=" d-flex">
                                 <div class="content_right">
