@@ -57,8 +57,14 @@ export default {
 <template>
     <section class="vue-home pt-5">
         <div class="container">
-            <div v-if="restaurant.plates && !loading">
-                <div class="row row-cols-1 row-cols-sm-3 g-4">
+            <div class=" text-center" v-if="loading">
+                <div class="loading">
+                    <img src="../../public/img/pacman.gif" alt="">
+                </div>
+                <h6>Caricamento...</h6>
+            </div>
+            <div v-else-if="restaurant.plates && !loading">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
 
 
@@ -69,15 +75,27 @@ export default {
                 </div>
 
                 <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
+                    <ul class="pagination">
+                        <li class="page-item" v-if="restaurant.prev_page_url"
+                            @click="prevPage(restaurant.prev_page_url)">
+                            <a class="page-link" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
+                            restaurant.current_page
+                        }}</a></li>
+                    </ul>
 
                 </nav>
 
             </div>
             <div v-else>
-                <p>Nessun piatto registrato</p>
+                <p>Non ci sono piatti disponibili</p>
+
             </div>
         </div>
-</section>
+    </section>
 </template>
 
 <style lang="scss" scoped>

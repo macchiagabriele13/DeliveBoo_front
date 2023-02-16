@@ -37,20 +37,21 @@ export default {
 }  
 </script>
 
-<template><!-- banner -->
+<!-- banner -->
+<template>
     <section id="banner_single_restaurant">
         <div class="container-fluid bg_orange">
-            <div class="container d-flex align-items-center justify-content-center justify-content-around">
+            <div class="container">
                 <h1 class="fs_custom text-white">{{ restaurant.company_name }}</h1>
-                <div class="card bg_orange border-0 d-flex" style="height: 20rem; width: 40rem;">
+                <div class="card bg_orange border-0 d-flex">
                     <div class="card-body restaurant_details d-flex justify-content-center flex-column">
-                        <p class="card-text text-white fs-3">{{ restaurant.description }}</p>
+                        <p class="card-text text-white">{{ restaurant.description }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<PlateList />
+    <PlateList />
 </template>
 
 <style lang="scss" scoped>
@@ -65,5 +66,29 @@ export default {
 
 .fs_custom {
     font-size: 4rem;
+}
+
+.container {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+
+
 }
 </style>

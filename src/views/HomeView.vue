@@ -35,7 +35,7 @@ export default {
         <!-- homepage -->
         <section id="home" class="bg_orange">
 
-            <div class="container position-relative h-100 d-flex">
+            <div class="container-fluid p-0 position-relative h-100 d-flex">
                 <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
                 <div class="title_small">
                     <a href="#restaurant_cards">
@@ -48,7 +48,7 @@ export default {
                 <!-- responsive small -->
                 <div class="home-banner">
                     <div class="row">
-                        <div class="col-6 ps-4">
+                        <div class="col-6 ps-5">
                             <button class="btn pt-4 border-0 btn_title">
                                 <div class="title">
                                     <a href="#restaurant_cards">
@@ -103,9 +103,11 @@ export default {
                 <div class="row g-3 g-md-4 justify-content-center">
                     <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center" v-for="tipo in types">
                         <div class="card_image">
-                            <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image" class="img-fluid">
+                            <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image"
+                                class="img-fluid">
                             <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(tipo.name)">
+                                <router-link :to="{ name: 'restaurants' }"
+                                    @click.preventDefault()="setSelected(tipo.name)">
                                     <div class="text">{{ tipo.name }}</div>
                                 </router-link>
                             </div>
@@ -114,7 +116,7 @@ export default {
                 </div>
             </div>
         </section>
-</main>
+    </main>
 </template>
 
 <style lang="scss" scoped>
@@ -465,13 +467,12 @@ button:hover:after {
 
                 h1 {
                     font-size: 80px;
-
-
                 }
 
                 h1,
                 p {
                     color: $primary;
+                    padding: 0.5rem;
                 }
 
 

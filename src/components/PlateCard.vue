@@ -28,22 +28,21 @@ export default {
 
 <template>
     <div class="col">
-        <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4 w-100 h-100" style="width: 21rem;">
+        <div class="card h-100 border-0 shadow-lg rounded-4">
             <img class="card-img-top rounded-top p-4" :src="getImagePath(plate.image)" alt="">
-            <div class="card-body d-flex align-items-center flex-column justify-content-between">
+            <div class="card-body d-flex align-items-center flex-column justify-content-between text-center">
                 <div class="card-info">
                     <h4 class="text-title">{{ plate.name }}</h4>
                     <p class="text-body">{{ plate.description }}</p>
                 </div>
                 <div class="card-action">
-                    <h6>{{ plate.price + ' €' }}</h6>
-
-                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" role="button"
-                        @click.preventDefault()="store.addToCart(plate)">Aggiungi al carrello</button>
+                    <h5>{{ plate.price + ' €' }}</h5>
+                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2"
+                        role="button" @click.preventDefault()="store.addToCart(plate)">Aggiungi al Carrello</button>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -61,18 +60,24 @@ export default {
 .card {
 
     img {
-        opacity: 1;
         display: block;
         width: 100%;
-        height: auto;
+        height: 300px;
         transition: .5s ease;
+        object-fit: contain;
     }
 
-    img:hover {
-        opacity: 0.3;
-        background-color: $primary_soft;
+    transition: filter 200ms,
+    transform 200ms linear;
+
+    h5 {
+        color: $primary;
+        font-weight: 900;
     }
+
+
 }
+
 
 .btn.btn:hover {
     background-color: $secondary;
@@ -91,5 +96,9 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05) translateZ(0);
 }
 </style>
