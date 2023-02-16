@@ -1,4 +1,6 @@
 <script>
+
+
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -465,5 +467,10 @@ export default {
 
 .invalid {
     border-color: red;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgb(253 184 13 / 25%) !important;
+    border-color: $primary;
 }
 </style>
