@@ -12,7 +12,6 @@ export default {
 </script>
 
 <template>
-
     <header>
         <!-- navbar -->
         <section class="nav_top bg-dark">
@@ -60,23 +59,23 @@ export default {
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <div class="content_left p-1">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-6">
-                                        <li class="nav-item">
-                                            <router-link class="nav-link text-uppercase" :to="{ name: 'home' }"
-                                                aria-current="page">Home
-                                                <span class="visually-hidden">(current)</span></router-link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <router-link class="nav-link text-uppercase"
-                                                :to="{ name: 'restaurants' }">Ristoranti</router-link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <router-link class="nav-link text-uppercase"
-                                                :to="{ name: 'contacts' }">Contatti</router-link>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <!-- <div class="content_left p-1"> -->
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <router-link class="nav-link text-uppercase" :to="{ name: 'home' }"
+                                            aria-current="page">Home
+                                            <span class="visually-hidden">(current)</span></router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link text-uppercase"
+                                            :to="{ name: 'restaurants' }">Ristoranti</router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link text-uppercase"
+                                            :to="{ name: 'contacts' }">Contatti</router-link>
+                                    </li>
+                                </ul>
+                                <!-- </div> -->
                             </div>
                             <div class="content_middle">
                                 <h5>Logo</h5>
@@ -109,14 +108,7 @@ export default {
             </nav>
         </section>
 
-
-
-
-    </header>
-
-
-
-
+</header>
 </template>
 
 <style lang="scss" scoped>
