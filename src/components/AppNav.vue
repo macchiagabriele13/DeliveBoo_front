@@ -23,6 +23,8 @@
 
 
 
+
+
 import { store } from '../store.js';
 
 export default {
@@ -53,7 +55,7 @@ export default {
                                 </a>
                             </div>
                             <div class="content_middle">
-                                <h5 class="text-white">Logo</h5>
+                                <img width="50px" src="../assets/img/pacfood-logo.png" alt="">
                             </div>
                             <div class="d-flex">
                                 <div class="icon me-3">
