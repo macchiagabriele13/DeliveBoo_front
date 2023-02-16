@@ -73,6 +73,7 @@ export default {
 
 
                 </div>
+
                 <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
                     <ul class="pagination">
                         <li class="page-item" v-if="restaurant.prev_page_url"
@@ -85,26 +86,16 @@ export default {
                             restaurant.current_page
                         }}</a></li>
 
-                        <li class="page-item" v-if="restaurant.next_page_url"
-                            @click="nextPage(restaurant.next_page_url)">
-                            <a class="page-link" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+
                 </nav>
 
             </div>
             <div v-else>
                 <p>Non ci sono piatti disponibili</p>
+
             </div>
         </div>
-    </section>
-
-
-
-
-
+</section>
 </template>
 
 <style lang="scss" scoped>

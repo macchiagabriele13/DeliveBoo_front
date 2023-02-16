@@ -48,6 +48,7 @@ export default {
             for (let i = 0; i < store.cart.quantity.length; i++) {
                 price = price + store.cart.quantity[i] * store.cart.plates.prices[i];
             }
+            price += store.deliveryCost;
             return price.toFixed(2);
         }
     },
@@ -60,9 +61,6 @@ export default {
 </script>
 
 <template>
-
-    <!-- <div class="off-canvas"> -->
-
     <div id="CartDrawer" class="drawer drawer--right open" tabindex="-1">
         <div class="drawer__header">
             <span class="drawer__close js-drawer-close dt-sc-btn open close-icon"
@@ -81,10 +79,6 @@ export default {
                     <li class="ajaxcart__product" v-if="store.cart.plates.plates.length > 0"
                         v-for="plate, i in store.cart.plates.plates">
                         <div class="ajaxcart row" data-line="1">
-                            <!-- <div class="item_img"><a href="/products/toritilla-wrap?variant=39541360099411"
-                                            class="ajaxcart__product-image"> <img
-                                                src="https://cdn.shopify.com/s/files/1/0549/7359/5731/products/shop007_medium.jpg?v=1638158749"
-                                                alt=""></a> </div> -->
                             <div class="details_cart">
                                 <h6>{{ plate }}</h6>
                                 <div>{{ store.cart.plates.prices[i] }}</div>
@@ -101,11 +95,6 @@ export default {
                                         @click.preventDefault()="addQuantity(plate)">
                                         <span>+</span>
                                     </button>
-
-                                    <!-- <button id="changeQty" class="ajaxcart__qty-remove remove-btn  dt-sc-btn"
-                                        @click.preventDefault()="deletePlate(plate)">
-                                        <font-awesome-icon icon="fa-solid fa-trash" />
-                                    </button> -->
                                 </div>
                             </div>
                         </div>
@@ -119,27 +108,24 @@ export default {
                 <div class="ajaxcart__footer row">
                     <div class="subtotal">
                         <p class="title">Totale</p>
-                        <p class="subtotal-price"><span class="cart-original-total money">{{ getPrice() }}</span></p>
+                        <p class="subtotal-price text-end">
+                            <span class="cart-original-total money">{{ getPrice() }}</span>
+                        <div>+{{ store.deliveryCost }} &euro; (consegna)</div>
+                        </p>
                     </div>
 
 
-                    <div class="discounts">
-
-
-                    </div>
-                    <div class="total">
-                        <p>Shipping, taxes, and discounts will be calculated at checkout.</p>
-                    </div>
 
                     <div class="d-flex flex-column px-3">
                         <router-link :to="{ name: 'checkout' }">
-                            <button type="submit" class="btn btn_orange mb-4 w-100" name="checkout">
+                            <button type="submit" class="btn btn_orange mb-4 w-100" name="checkout"
+                                @click.preventDefault="store.toggleCart()">
                                 Procedi al Checkout
                             </button>
                         </router-link>
 
 
-                        <router-link class="btn btn_orange" :to="{ name: 'cart' }">Vedi il carrello</router-link>
+                        <!-- <router-link class="btn btn_orange" :to="{ name: 'cart' }">Vedi il carrello</router-link> -->
 
                     </div>
 
@@ -149,11 +135,7 @@ export default {
             </form>
 
         </div>
-    </div>
-
-    <!-- </div> -->
-
-
+</div>
 </template>
 
 <style lang="scss" scoped>

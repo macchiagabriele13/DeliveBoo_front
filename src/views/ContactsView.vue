@@ -1,5 +1,6 @@
 <script>
 
+
 export default {
     name: 'ContactsView',
     components: {
@@ -8,8 +9,7 @@ export default {
 }  
 </script>
 
-<template>
-    <!-- banner -->
+<template><!-- banner -->
     <section id="banner_contacts">
         <div class="container-fluid bg_orange">
             <div class="container d-flex align-items-center justify-content-center justify-content-around h-100 w-100">
@@ -25,8 +25,7 @@ export default {
             <!-- assistenza ordini online -->
             <div class="row">
                 <h2 class="pe_custom ms-sm-3 ms-md-0">Assistenza ordini</h2>
-                <div
-                    class="col-4 col-s-4 col-s-12 border_end ms-sm-3 ms-md-0 border-xl-2 mt-2 p-sm-2 p-md-3 mb-3 d-flex">
+                <div class="col-4 col-s-4 col-s-12 border_end ms-sm-3 ms-md-0 border-xl-2 mt-2 p-sm-2 p-md-3 mb-3 d-flex">
                     <div class="phone_image d-flex align-items-center me-3 pb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40" fill="currentColor" class="bi bi-phone"
                             viewBox="0 0 16 16">
@@ -129,29 +128,29 @@ export default {
                                 <input type="text" name="name" id="name" v-model="name" class="form-control p-3"
                                     placeholder="Nome" aria-describedby="fullNameHelper">
                                 <!-- <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p> -->
+                        {{ error }}
+                    </p> -->
                             </div>
                             <div class="mb-5">
                                 <input type="email" name="email" id="email" v-model="email" class="form-control p-3"
                                     placeholder="Email" aria-describedby="emailHelper">
                                 <!-- <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p> -->
+                        {{ error }}
+                    </p> -->
                             </div>
                             <div class="mb-5">
                                 <input type="text" name="phone" id="phone" v-model="phone" class="form-control p-3"
                                     placeholder="Numero di cellulare" aria-describedby="phoneHelper">
                                 <!-- <p v-for="(error) in errors.phone" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p> -->
+                        {{ error }}
+                    </p> -->
                             </div>
                             <div class="mb-5">
-                                <textarea class="form-control p-3" name="message" id="message" v-model="message"
-                                    rows="5" placeholder="Messaggio"></textarea>
+                                <textarea class="form-control p-3" name="message" id="message" v-model="message" rows="5"
+                                    placeholder="Messaggio"></textarea>
                                 <!-- <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p> -->
+                        {{ error }}
+                    </p> -->
                             </div>
 
                             <button type="submit" class="btn btn-dark btn-lg rounded-pill border-0 padding_custom">
@@ -164,8 +163,7 @@ export default {
                     <div class="delivery_time">
                         <div class="card text-bg-light">
                             <img src="../../public/img/delivery-time-contacts.webp" class="card-img" alt="...">
-                            <div
-                                class="card-img-overlay d-flex justify-content-center align-items-start flex-column w-50">
+                            <div class="card-img-overlay d-flex justify-content-center align-items-start flex-column w-50">
                                 <h2 class="card-title">Orari di consegna</h2>
                                 <p class="card-text border-bottom border-2">Noi trasportiamo il tuo cibo entro 30
                                     minuti.</p>
@@ -188,8 +186,7 @@ export default {
                 width="1150" height="600" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-    </section>
-
+</section>
 </template>
 
 <style lang="scss" scoped>
@@ -202,7 +199,7 @@ export default {
 }
 
 .responsive_image {
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 

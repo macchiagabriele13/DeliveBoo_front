@@ -1,4 +1,5 @@
 <script>
+
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -33,7 +34,8 @@ export default {
     <main>
         <!-- homepage -->
         <section id="home" class="bg_orange">
-            <div class="container-fluid p-0 h-100 d-flex">
+
+            <div class="container position-relative h-100 d-flex">
                 <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
                 <div class="title_small">
                     <a href="#restaurant_cards">
@@ -86,10 +88,10 @@ export default {
                         <div class="pacman__food"></div>
                     </div>
                     <!-- <img height="150" src="../../public/img/pacman.png" alt="">
-                    <span class="button_clickme ms-4 mt-4">
-                        <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
-                            role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                    </span> -->
+                                    <span class="button_clickme ms-4 mt-4">
+                                        <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
+                                            role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
+                                    </span> -->
                 </div>
 
             </div>
@@ -98,14 +100,12 @@ export default {
         <section id="restaurant_cards">
             <h1 class="text-center my-5">Esplora per categoria</h1>
             <div class="container">
-                <div class="row g-3 g-md-4">
+                <div class="row g-3 g-md-4 justify-content-center">
                     <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center" v-for="tipo in types">
                         <div class="card_image">
-                            <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image"
-                                class="img-fluid">
+                            <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image" class="img-fluid">
                             <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }"
-                                    @click.preventDefault()="setSelected(tipo.name)">
+                                <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(tipo.name)">
                                     <div class="text">{{ tipo.name }}</div>
                                 </router-link>
                             </div>
@@ -114,7 +114,7 @@ export default {
                 </div>
             </div>
         </section>
-    </main>
+</main>
 </template>
 
 <style lang="scss" scoped>
@@ -268,6 +268,13 @@ button:hover:after {
 
 }
 
+
+.button_wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .title_small_banner {
     display: none;
 }
@@ -276,6 +283,7 @@ button:hover:after {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .pacman {
@@ -285,8 +293,7 @@ button:hover:after {
     border-radius: 50%;
     background: #f2d648;
     margin-top: 20px;
-    bottom: 15%;
-    position: absolute;
+    position: relative;
     animation: linear infinite;
     animation-name: run;
     animation-duration: 5s;

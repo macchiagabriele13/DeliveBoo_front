@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios'
 import PlateList from '../components/PlateList.vue'
+import { store } from '../store'
 export default {
     name: 'SingleRestaurant',
     components: {
@@ -19,7 +20,8 @@ export default {
                 .then(response => {
                     console.log(response.data.results);
                     this.restaurant = response.data.results;
-                    this.loading = false
+                    this.loading = false;
+                    store.deliveryCost = this.restaurant.delivery;
                 })
                 .catch(error => {
                     console.error(error)
@@ -35,8 +37,7 @@ export default {
 }  
 </script>
 
-<template>
-    <!-- banner -->
+<template><!-- banner -->
     <section id="banner_single_restaurant">
         <div class="container-fluid bg_orange">
             <div class="container d-flex align-items-center justify-content-center justify-content-around">
@@ -49,8 +50,7 @@ export default {
             </div>
         </div>
     </section>
-    <PlateList />
-
+<PlateList />
 </template>
 
 <style lang="scss" scoped>
