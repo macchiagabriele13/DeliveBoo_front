@@ -288,6 +288,8 @@ export default {
             store.cart.quantity = [];
             store.cart.restaurant = 0;
             store.deliveryCost = 0;
+
+            location.replace('/success');
         }
     },
     mounted() {

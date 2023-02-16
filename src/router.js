@@ -9,6 +9,7 @@ import SingleRestaurantView from './views/SingleRestaurantView.vue'
 import RestaurantsView from './views/RestaurantsView.vue'
 import CartView from './views/CartView.vue'
 import CheckoutView from './views/CheckoutView.vue'
+import SuccessView from './views/SuccessView.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -64,7 +65,11 @@ const router = createRouter({
             name: 'checkout',
             component: CheckoutView
         },
-
+        {
+            path: '/success',
+            name: 'success',
+            component: SuccessView
+        },
 
 
     ]

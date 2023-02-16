@@ -88,10 +88,10 @@ export default {
                         <div class="pacman__food"></div>
                     </div>
                     <!-- <img height="150" src="../../public/img/pacman.png" alt="">
-                        <span class="button_clickme ms-4 mt-4">
-                            <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
-                                role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                        </span> -->
+                                    <span class="button_clickme ms-4 mt-4">
+                                        <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
+                                            role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
+                                    </span> -->
                 </div>
 
             </div>
@@ -100,7 +100,7 @@ export default {
         <section id="restaurant_cards">
             <h1 class="text-center my-5">Esplora per categoria</h1>
             <div class="container">
-                <div class="row g-3 g-md-4">
+                <div class="row g-3 g-md-4 justify-content-center">
                     <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center" v-for="tipo in types">
                         <div class="card_image">
                             <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image" class="img-fluid">
@@ -272,8 +272,9 @@ button:hover:after {
 .button_wrapper {
     position: absolute;
     bottom: 0;
-    left: 0;}
-    
+    left: 0;
+}
+
 .title_small_banner {
     display: none;
 }
