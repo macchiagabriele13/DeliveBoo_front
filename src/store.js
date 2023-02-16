@@ -13,6 +13,7 @@ export const store = reactive({
         },
         quantity: []
     },
+    deliveryCost: 0,
 
     toggleCart() {
         this.cartOn = !this.cartOn;
@@ -47,6 +48,7 @@ export const store = reactive({
                 this.cart.plates.plates = [];
                 this.cart.plates.prices = [];
                 this.cart.quantity = [];
+                this.cart.restaurant = 0;
 
                 this.cart.restaurant = plate.restaurant_id;
                 this.cart.plates.plates.push(plate.name);
