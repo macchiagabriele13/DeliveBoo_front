@@ -27,7 +27,6 @@ export default {
 </script>
 
 <template>
-
     <div class="col">
         <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4 w-100 h-100" style="width: 21rem;">
             <img class="card-img-top rounded-top p-4" :src="getImagePath(plate.image)" alt="">
@@ -38,12 +37,12 @@ export default {
                 </div>
                 <div class="card-action">
                     <h6>{{ plate.price + ' €' }}</h6>
-                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2"
-                        role="button" @click.preventDefault()="store.addToCart(plate)">Add to Cart</button>
+                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" role="button"
+                        @click.preventDefault()="store.addToCart(plate)">Aggiungi al carrello</button>
                 </div>
             </div>
         </div>
-    </div>
+</div>
 </template>
 
 <style lang="scss" scoped>

@@ -67,38 +67,17 @@ export default {
 
 
                 </div>
-                <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
-                    <ul class="pagination    ">
-                        <li class="page-item" v-if="restaurant.prev_page_url"
-                            @click="prevPage(restaurant.prev_page_url)">
-                            <a class="page-link" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-                            restaurant.current_page
-                        }}</a></li>
 
-                        <li class="page-item" v-if="restaurant.next_page_url"
-                            @click="nextPage(restaurant.next_page_url)">
-                            <a class="page-link" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+                <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
+
                 </nav>
 
             </div>
             <div v-else>
-                <p> No plates here </p>
+                <p>Nessun piatto registrato</p>
             </div>
         </div>
-    </section>
-
-
-
-
-
+</section>
 </template>
 
 <style lang="scss" scoped>
