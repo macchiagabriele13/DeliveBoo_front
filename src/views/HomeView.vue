@@ -48,7 +48,7 @@ export default {
                 <!-- responsive small -->
                 <div class="home-banner">
                     <div class="row">
-                        <div class="col-6 ps-4">
+                        <div class="col-6 ps-5">
                             <button class="btn pt-4 border-0 btn_title">
                                 <div class="title">
                                     <a href="#restaurant_cards">
