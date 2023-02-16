@@ -103,7 +103,7 @@ export default {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+
 
                             <div class=" d-flex">
                                 <div class="content_right">
@@ -132,10 +132,6 @@ export default {
                 </div>
             </nav>
         </section>
-
-
-
-
 </header>
 </template>
 

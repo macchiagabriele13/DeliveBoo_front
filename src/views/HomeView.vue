@@ -34,6 +34,7 @@ export default {
     <main>
         <!-- homepage -->
         <section id="home" class="bg_orange">
+
             <div class="container position-relative h-100 d-flex">
                 <!-- <h1>199 Pac <br> Fc-d 199</h1> -->
                 <div class="title_small">
@@ -45,17 +46,38 @@ export default {
                     </p>
                 </div>
                 <!-- responsive small -->
-                <button class="btn pt-4 border-0 btn_title">
-                    <div class="title">
-                        <a href="#restaurant_cards">
-                            <h1>Ordina Ora!</h1>
-                        </a>
-                        <p>
-                            Ordina online dai tuoi ristoranti preferiti
-                        </p>
-                    </div>
+                <div class="home-banner">
+                    <div class="row">
+                        <div class="col-6 ps-4">
+                            <button class="btn pt-4 border-0 btn_title">
+                                <div class="title">
+                                    <a href="#restaurant_cards">
+                                        <h1>Ordina Ora!</h1>
+                                    </a>
+                                    <p>
+                                        Ordina online dai tuoi ristoranti preferiti
+                                    </p>
+                                </div>
+                            </button>
 
-                </button>
+                            <div class="title_small_banner">
+                                <a href="#restaurant_cards">
+                                    <h1>Ordina Ora!</h1>
+                                </a>
+                                <p>
+                                    Ordina online dai tuoi ristoranti preferiti
+                                </p>
+                            </div>
+                            <!-- responsive small -->
+                        </div>
+                        <div class="col-6">
+                            <div class="pac-image">
+                                <img class="img-fluid" src="../../public/img/pac-burger.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
 
                 <!-- pac-man -->
@@ -134,7 +156,7 @@ button:before {
     top: 0;
     height: 100%;
     width: 58%;
-    background: $primary_soft;
+    background: #fabc2f66;
     z-index: -1;
     transition: 0.3s ease-in all;
 }
@@ -146,7 +168,7 @@ button:after {
     top: 5%;
     height: 90%;
     width: 5%;
-    background: #fabd2f93;
+    background: #fabc2f66;
     transition: 0.4s 0.02s ease-in all;
 }
 
@@ -183,13 +205,11 @@ button:hover:after {
 }
 
 .bg_orange {
-    background-color: $primary;
     height: calc(100vh - 120px);
-
-    background-image: url('../../public/img/pac-burger.png');
+    background-image: url('../../public/img/pattern-home.png');
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 50%;
+    background-size: cover;
 }
 
 
@@ -198,11 +218,11 @@ button:hover:after {
 
     h1 {
         font-size: 100px;
-        color: $light;
+        color: $primary;
     }
 
     p {
-        color: $light;
+        color: $primary;
         margin-top: 2rem;
         font-size: 25px;
     }
@@ -211,12 +231,8 @@ button:hover:after {
         text-decoration: none;
         color: $dark;
         transition: 0.2s 0.02s ease-in all;
-
     }
 
-    &:hover a {
-        color: $light;
-    }
 }
 
 .title_small {
@@ -252,10 +268,21 @@ button:hover:after {
 
 }
 
+
 .button_wrapper {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0;}
+    
+.title_small_banner {
+    display: none;
+}
+
+.home-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .pacman {
@@ -423,9 +450,12 @@ button:hover:after {
 @media screen and (max-width: 767px) {
 
     #home {
-        background-image: none;
+        background-image: url('../../public/img/pattern-home.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: cover;
 
-        .container {
+        .container-fluid {
             padding-top: 4rem;
             align-items: flex-start;
 
@@ -434,20 +464,35 @@ button:hover:after {
 
                 h1 {
                     font-size: 80px;
+
+
                 }
+
+                h1,
+                p {
+                    color: $primary;
+                }
+
+
             }
 
             .pacman {
                 display: block;
                 z-index: 2;
-                bottom: 10%;
+                bottom: 0;
             }
 
             .btn_title {
                 display: none;
             }
 
+            .pac-image {
+                display: none;
+            }
 
+            .home-banner {
+                display: none;
+            }
         }
     }
 
@@ -466,14 +511,41 @@ button:hover:after {
         background-position: right bottom;
     }
 
-    #home .container {
+    #home .container-fluid {
         align-items: flex-start;
         justify-content: center;
 
-        .btn_title {
-            margin-top: 8rem;
+    }
+
+    .home-banner {
+        margin-top: 6rem;
+    }
+
+    .btn_title {
+        display: none;
+    }
+
+    .title_small_banner {
+        display: block;
+        text-align: center;
+
+        h1 {
+            font-size: 80px;
         }
 
+        h1,
+        p {
+            color: $primary;
+        }
+
+        p {
+            font-size: 25px;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
     }
 
     .title {
