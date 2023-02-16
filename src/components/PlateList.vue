@@ -1,4 +1,5 @@
 <script>
+
 import axios from 'axios'
 import PlateCard from './PlateCard.vue'
 
@@ -75,17 +76,17 @@ export default {
                 </div>
 
                 <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
-                    <ul class="pagination">
-                        <li class="page-item" v-if="restaurant.prev_page_url"
-                            @click="prevPage(restaurant.prev_page_url)">
-                            <a class="page-link" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-                            restaurant.current_page
-                        }}</a></li>
-                    </ul>
+                    <!-- <ul class="pagination">
+                            <li class="page-item" v-if="restaurant.prev_page_url"
+                                @click="prevPage(restaurant.prev_page_url)">
+                                <a class="page-link" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
+                                restaurant.current_page
+                            }}</a></li>
+                        </ul> -->
 
                 </nav>
 
@@ -95,7 +96,7 @@ export default {
 
             </div>
         </div>
-    </section>
+</section>
 </template>
 
 <style lang="scss" scoped>

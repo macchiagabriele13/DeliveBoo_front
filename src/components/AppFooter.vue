@@ -1,10 +1,20 @@
 <script>
+
+
+
+
+
+
+
+
+
+
 export default {
     name: "AppFooter",
 }
 </script>
 
-<template><!-- footer -->
+<template>
     <footer class="bg_footer">
         <section class="border_bottom" id="footer_top">
             <div class="container">
@@ -26,12 +36,17 @@ export default {
                         <h3 class="mt-3 mb-4">Contattaci</h3>
                         <ul class="list-unstyled">
                             <li>
-                                <h5>Telefono</h5>
-                                <p>0000 - 123 - 456789</p>
+                                <a class="text-decoration-none text-white" href="tel:+39335658721">
+                                    <h5>Telefono</h5>
+                                    <p class="hover_red_mail">335658721</p>
+                                </a>
                             </li>
                             <li>
-                                <h5>Email</h5>
-                                <a class="hover_red_mail text-decoration-none" href="#">info@example.com</a>
+                                <a class="text-decoration-none text-white" href="mailto:info@example.com">
+                                    <h5>Email</h5>
+                                    <p class="hover_red_mail ">info@example.com</p>
+
+                                </a>
                             </li>
                             <li>
                                 <div class="social_icons d-flex justify-content-center mt-2">
