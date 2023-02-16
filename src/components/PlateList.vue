@@ -85,7 +85,7 @@ export default {
                         <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
                             restaurant.current_page
                         }}</a></li>
-
+                    </ul>
 
                 </nav>
 
@@ -95,7 +95,7 @@ export default {
 
             </div>
         </div>
-</section>
+    </section>
 </template>
 
 <style lang="scss" scoped>
