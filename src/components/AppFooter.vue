@@ -87,7 +87,7 @@ export default {
             </div>
         </section>
         <section id="footer_bottom">
-            <div class="copyright">
+            <div class="copyright text-center">
                 <p class="m-0 p-2 text-white">&copy; 2023 Boolean Team-2</p>
             </div>
         </section>
@@ -99,7 +99,7 @@ export default {
 @import '../styles/_variables';
 
 .bg_footer {
-    background-image: url('../../public/img/footer_bg.webp');
+    background-color: $primary;
     background-size: cover;
     background-repeat: no-repeat;
 }
