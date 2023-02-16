@@ -274,7 +274,8 @@ button:hover:after {
 .button_wrapper {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 15%;
+    width: 100%;
 }
 
 .title_small_banner {
