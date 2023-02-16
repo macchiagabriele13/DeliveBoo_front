@@ -4,8 +4,7 @@ export default {
 }
 </script>
 
-<template>
-    <!-- footer -->
+<template><!-- footer -->
     <footer class="bg_footer">
         <section class="border_bottom" id="footer_top">
             <div class="container">
@@ -91,7 +90,7 @@ export default {
                 <p class="m-0 p-2 text-white">&copy; 2023 Boolean Team-2</p>
             </div>
         </section>
-    </footer>
+</footer>
 </template>
 
 <style lang="scss" scoped>
@@ -99,7 +98,7 @@ export default {
 @import '../styles/_variables';
 
 .bg_footer {
-    background-color: $primary;
+    background-image: url('../../public/img/footer_bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
 }
