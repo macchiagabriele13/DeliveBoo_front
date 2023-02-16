@@ -1,4 +1,25 @@
 <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { store } from '../store.js';
 
 export default {
@@ -12,22 +33,24 @@ export default {
 </script>
 
 <template>
-
     <header>
         <!-- navbar -->
         <section class="nav_top bg-dark">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <div class="row w-100">
+                    <div class="row black_nav">
                         <div class="content_top d-flex justify-content-between align-items-center">
                             <a class="delivery_man ms-4" href="#">
-                                <img class="w-75" src="../../public/img/delivery-man.png" alt="">
+                                <img class="" src="../../public/img/delivery-man.png" alt="">
                             </a>
                             <div class="content_left p-1">
                                 <a class="text-decoration-none border-0" href="#">
                                     <span class="text-danger fw-bold fs-5">Consegna gratuita</span>
                                     per ordini superiori ai 10€
                                 </a>
+                            </div>
+                            <div class="content_middle">
+                                <h5 class="text-white">Logo</h5>
                             </div>
                             <div class="d-flex">
                                 <div class="icon me-3">
@@ -53,35 +76,36 @@ export default {
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <div class="row w-100">
-                        <div class="content_bottom d-flex justify-content-between align-items-center">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <div class="content_left p-1">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-6">
-                                        <li class="nav-item">
-                                            <router-link class="nav-link text-uppercase" :to="{ name: 'home' }"
-                                                aria-current="page">Home
-                                                <span class="visually-hidden">(current)</span></router-link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <router-link class="nav-link text-uppercase"
-                                                :to="{ name: 'restaurants' }">Ristoranti</router-link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <router-link class="nav-link text-uppercase"
-                                                :to="{ name: 'contacts' }">Contatti</router-link>
-                                        </li>
-                                    </ul>
+                        <div class="content_bottom d-flex justify-content-between">
+
+                            <div>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class=" block_menu collapse navbar-collapse" id="navbarSupportedContent">
+                                    <div class="p-1">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-6">
+                                            <li class="nav-item">
+                                                <router-link class="nav-link text-uppercase" :to="{ name: 'home' }"
+                                                    aria-current="page">Home
+                                                    <span class="visually-hidden">(current)</span></router-link>
+                                            </li>
+                                            <li class="nav-item">
+                                                <router-link class="nav-link text-uppercase"
+                                                    :to="{ name: 'restaurants' }">Ristoranti</router-link>
+                                            </li>
+                                            <li class="nav-item">
+                                                <router-link class="nav-link text-uppercase"
+                                                    :to="{ name: 'contacts' }">Contatti</router-link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="content_middle">
-                                <h5>Logo</h5>
-                            </div>
-                            <div class="content_right align-items-center d-flex">
+
+                            <div class=" d-flex">
                                 <div class="content_right">
                                     <a class="search_icon" href="/restaurants">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"
@@ -112,11 +136,7 @@ export default {
 
 
 
-    </header>
-
-
-
-
+</header>
 </template>
 
 <style lang="scss" scoped>
@@ -218,7 +238,42 @@ a.nav-link {
 
 @media screen and (max-width: 767px) {
 
-    .content_left a,
+    .content_left {
+        display: none;
+
+        a {
+            display: none;
+        }
+    }
+
+    .block_menu {
+        position: absolute;
+        z-index: 3;
+        background: white;
+        width: 90%;
+        margin-top: 1rem;
+        padding: 0px 0.5rem;
+        border-bottom: 1px solid rgb(239, 239, 239);
+        max-width: none !important;
+    }
+
+    .black_nav {
+        width: inherit !important;
+    }
+
+    .delivery_man {
+        margin: 0 !important;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .icon {
+        margin: 0 !important;
+    }
+
     .phone_icon {
         display: none;
     }
