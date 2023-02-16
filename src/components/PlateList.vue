@@ -64,7 +64,7 @@ export default {
                 <h6>Caricamento...</h6>
             </div>
             <div v-else-if="restaurant.plates && !loading">
-                <div class="row row-cols-1 row-cols-sm-3 g-4">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
 
 

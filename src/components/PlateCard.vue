@@ -28,7 +28,7 @@ export default {
 
 <template>
     <div class="col">
-        <div class="card border-0 shadow-lg rounded-4 mt-4 mb-4 w-100 h-100" style="width: 21rem;">
+        <div class="card h-100 border-0 shadow-lg rounded-4">
             <img class="card-img-top rounded-top p-4" :src="getImagePath(plate.image)" alt="">
             <div class="card-body d-flex align-items-center flex-column justify-content-between text-center">
                 <div class="card-info">
@@ -42,7 +42,7 @@ export default {
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -74,7 +74,10 @@ export default {
         color: $primary;
         font-weight: 900;
     }
+
+
 }
+
 
 .btn.btn:hover {
     background-color: $secondary;

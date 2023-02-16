@@ -21,6 +21,8 @@
 
 
 
+
+
 import { store } from '../store.js';
 
 export default {
@@ -107,7 +109,7 @@ export default {
                             </div>
 
                             <div class=" d-flex">
-                                <div class="content_right">
+                                <div class="align-self-center content_right">
                                     <a class="search_icon" href="/restaurants">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"
                                             fill="currentFill" class="bi bi-search me-1" viewBox="0 0 16 16">
@@ -231,6 +233,11 @@ a.nav-link {
 .cart_icon {
     color: $dark !important;
     position: relative;
+}
+
+.black_nav {
+    width: inherit !important;
+    max-width: none !important;
 }
 
 @media screen and (max-width: 767px) {

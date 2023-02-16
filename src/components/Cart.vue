@@ -135,7 +135,7 @@ export default {
             </form>
 
         </div>
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -407,7 +407,7 @@ a.button,
     -webkit-appearance: none;
     line-height: 1.8em;
     border-radius: 40px;
-    padding: 10px 20px 10px 20px;
+    padding: 0 0.7rem;
     color: $light;
     background-color: $primary;
     border: 0px solid $primary;
