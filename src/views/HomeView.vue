@@ -458,13 +458,12 @@ button:hover:after {
 
                 h1 {
                     font-size: 80px;
-
-
                 }
 
                 h1,
                 p {
                     color: $primary;
+                    padding: 0.5rem;
                 }
 
 
