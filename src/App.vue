@@ -52,10 +52,20 @@ export default {
                 piatti precendentemente salvati. Sei sicuro di voler continuare?</p>
 
             <div class="d-flex justify-content-end align-items-center gap-2">
-                <button type="button" class="btn btn-secondary"
-                    @click.preventDefault()="modalCartCancel()">Annulla</button>
+                <button type="button" class="btn btn-secondary" @click.preventDefault()="modalCartCancel()">Annulla</button>
+                <button type="button" class="btn btn-success" @click.preventDefault()="modalCartConfirm()">Conferma</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal_cart_fade" v-if="store.voidCart">
+        <div class="modal_cart bg-light rounded-2 p-3">
+            <h3>Carrello vuoto</h3>
+            <p>Stai tentando di effettuare un ordine con il carrello vuoto. Inserisci almeno un piatto per proseguire</p>
+
+            <div class="d-flex justify-content-end align-items-center gap-2">
                 <button type="button" class="btn btn-success"
-                    @click.preventDefault()="modalCartConfirm()">Conferma</button>
+                    @click.preventDefault()="store.toggleVoidCart()">Conferma</button>
             </div>
         </div>
     </div>
