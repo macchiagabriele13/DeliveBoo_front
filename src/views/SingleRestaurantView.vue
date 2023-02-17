@@ -21,7 +21,6 @@ export default {
                     console.log(response.data.results);
                     this.restaurant = response.data.results;
                     this.loading = false;
-                    store.deliveryCost = this.restaurant.delivery;
                 })
                 .catch(error => {
                     console.error(error)

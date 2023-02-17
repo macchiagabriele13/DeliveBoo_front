@@ -2,6 +2,7 @@ import { reactive } from 'vue';
 
 export const store = reactive({
     cartOn: false,
+    voidCart: false,
     modalCartEnabled: false,
     base_api_url: 'http://localhost:8000',
     selected: [],
@@ -17,6 +18,10 @@ export const store = reactive({
 
     toggleCart() {
         this.cartOn = !this.cartOn;
+    },
+
+    toggleVoidCart() {
+        this.voidCart = false;
     },
 
     addToCart(plate) {

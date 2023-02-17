@@ -67,7 +67,6 @@ export default {
             for (let i = 0; i < store.cart.quantity.length; i++) {
                 price = price + store.cart.quantity[i] * store.cart.plates.prices[i];
             }
-            price += store.deliveryCost;
             return price.toFixed(2);
         },
 
@@ -237,8 +236,12 @@ export default {
             ) {
                 /* console.log('Tutti i dati sono inseriti nel modo corretto. Ordine salvato con successo.');
                 console.log(store.base_api_url + '/api/orders/' + localStorage.getItem('plates') + '/' + JSON.stringify(this.client)); */
-                this.sendOrder(store.base_api_url + '/api/orders/' + localStorage.getItem('plates') + '/' + JSON.stringify(this.client));
-                this.resetClientAndCart();
+
+                if (store.cart.quantity.length === 0) {
+                    store.voidCart = true;
+                } else {
+                    this.sendOrder(store.base_api_url + '/api/orders/' + localStorage.getItem('plates') + '/' + JSON.stringify(this.client));
+                }
             }
         },
 
@@ -246,6 +249,7 @@ export default {
             axios.get(url)
                 .then(response => {
                     console.log(response);
+                    this.resetClientAndCart();
                 })
                 .catch(error => {
                     console.error(error);
@@ -325,11 +329,6 @@ export default {
                         </div>
                         <span class="text-muted">{{ store.cart.plates.prices[i - 1] * store.cart.quantity[i - 1] }}
                             &euro;</span>
-                    </li>
-
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Costo della consegna</span>
-                        <strong>{{ store.deliveryCost }} &euro;</strong>
                     </li>
 
                     <li class="list-group-item d-flex justify-content-between">
@@ -458,7 +457,7 @@ export default {
                 <!-- </form> -->
             </div>
         </div>
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>

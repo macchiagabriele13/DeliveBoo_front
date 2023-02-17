@@ -5,7 +5,7 @@ export default {
     name: "Cart",
     data() {
         return {
-            store
+            store,
         }
     },
     methods: {
@@ -48,7 +48,6 @@ export default {
             for (let i = 0; i < store.cart.quantity.length; i++) {
                 price = price + store.cart.quantity[i] * store.cart.plates.prices[i];
             }
-            price += store.deliveryCost;
             return price.toFixed(2);
         }
     },
@@ -81,20 +80,25 @@ export default {
                         <div class="ajaxcart row" data-line="1">
                             <div class="details_cart">
                                 <h6>{{ plate }}</h6>
-                                <div>{{ store.cart.plates.prices[i] }}</div>
 
-                                <div class="d-flex gap-1 align-items-center">
-                                    <button type="button" class="btn btn_orange"
-                                        @click.preventDefault()="remQuantity(plate)">
-                                        -
-                                    </button>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        {{ store.cart.plates.prices[i] }} &euro;
+                                    </div>
 
-                                    <div class="fs-5">{{ store.cart.quantity[i] }}</div>
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <button type="button" class="btn btn_orange m-0"
+                                            @click.preventDefault()="remQuantity(plate)">
+                                            -
+                                        </button>
 
-                                    <button type="button" class="btn btn_orange"
-                                        @click.preventDefault()="addQuantity(plate)">
-                                        <span>+</span>
-                                    </button>
+                                        <div class="fs-5">{{ store.cart.quantity[i] }}</div>
+
+                                        <button type="button" class="btn btn_orange m-0"
+                                            @click.preventDefault()="addQuantity(plate)">
+                                            <span>+</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -103,37 +107,29 @@ export default {
                     <li v-else>Nessun articolo nel carrello</li>
                 </ul>
 
-                <div class="remove_all text-end" @click.preventDefault()="resetCart()">Rimuovi tutto</div>
+                <div class="remove_all text-end" @click.preventDefault()="resetCart()"
+                    v-if="store.cart.quantity.length !== 0">Rimuovi tutto</div>
 
                 <div class="ajaxcart__footer row">
                     <div class="subtotal">
                         <p class="title">Totale</p>
                         <p class="subtotal-price text-end">
-                            <span class="cart-original-total money">{{ getPrice() }}</span>
-                        <div>+{{ store.deliveryCost }} &euro; (consegna)</div>
+                            <span class="cart-original-total money">{{ getPrice() }} &euro;</span>
                         </p>
                     </div>
 
-
-
                     <div class="d-flex flex-column px-3">
                         <router-link :to="{ name: 'checkout' }">
-                            <button type="submit" class="btn btn_orange mb-4 w-100" name="checkout"
-                                @click.preventDefault="store.toggleCart()">
+                            <button class="btn btn_orange mb-4 w-100" name="checkout"
+                                @click.preventDefault()="store.toggleCart()">
                                 Procedi al Checkout
                             </button>
                         </router-link>
 
-
                         <!-- <router-link class="btn btn_orange" :to="{ name: 'cart' }">Vedi il carrello</router-link> -->
-
                     </div>
-
-
-
                 </div>
             </form>
-
         </div>
     </div>
 </template>
@@ -415,10 +411,6 @@ a.button,
 
 .remove-btn {
     max-width: 60px;
-}
-
-.details_cart {
-    width: max-content;
 }
 
 
