@@ -9,7 +9,7 @@ export default {
 }  
 </script>
 
-<template><!-- banner -->
+<!-- banner -->
     <section id="banner_contacts">
         <div class="container-fluid bg_orange">
             <div class="container d-flex align-items-center justify-content-center justify-content-around h-100 w-100">
@@ -255,6 +255,8 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+
+    /* For Phones */
     .bg_contacts {
         background-size: contain;
     }
@@ -339,7 +341,7 @@ p {
 
 @media only screen and (min-width: 768px) {
 
-    /* For desktop: */
+    /* For Desktop: */
     .col-1 {
         width: 8.33%;
     }
