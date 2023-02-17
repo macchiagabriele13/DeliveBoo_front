@@ -95,7 +95,7 @@ export default {
 
                             <div class="align-items-center content_right d-flex">
                                 <a class="cart_icon" href="#">
-                                    <div class="align-items-center d-flex justify-content-center point"
+                                    <div class="align-items-center d-flex justify-content-center badge"
                                         :class="store.cart.quantity.length !== 0 ? '' : 'd-none'">
                                         <p>{{ store.cart.quantity.length }}</p>
                                     </div>
@@ -119,7 +119,7 @@ export default {
 @use '../styles/general.scss';
 @import '../styles/_variables';
 
-.point {
+.badge {
     position: absolute;
     background-color: $primary;
     border-radius: 18px;
