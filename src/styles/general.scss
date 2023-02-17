@@ -9,6 +9,7 @@
 body {
     font-size: .875rem;
     font-family: $font_back;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -117,18 +118,18 @@ nav {
 }
 
 .btn_orange {
-    background-color: $primary !important;
-    border-color: $primary !important;
-    color: $light !important;
+    background-color: $primary  !important;
+    border-color: $primary  !important;
+    color: $light  !important;
     font-weight: 400 !important;
     padding: 0.5rem;
-    border: 1px solid $primary !important;
+    border: 1px solid $primary  !important;
     transition: shadow 0.1s ease-in-out;
 
     &:hover {
-        background-color: $primary_soft !important;
-        border-color: $primary_soft !important;
-        color: $light !important;
+        background-color: $primary_soft  !important;
+        border-color: $primary_soft  !important;
+        color: $light  !important;
         font-weight: 400 !important;
         box-shadow: 0 0 10px $primary;
         transition: shadow 0.1s ease-in-out;
