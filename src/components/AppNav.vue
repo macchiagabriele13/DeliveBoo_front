@@ -5,6 +5,9 @@
 
 
 
+
+
+
 import { store } from '../store.js';
 
 export default {
@@ -28,14 +31,8 @@ export default {
                             <a class="delivery_man ms-4" href="/restaurants">
                                 <img class="" src="../../public/img/delivery-man.png" alt="">
                             </a>
-                            <div class="content_left p-1">
-                                <a class="text-decoration-none border-0" href="/restaurants">
-                                    <span class="text-danger fw-bold fs-5">Consegna gratuita</span>
-                                    per ordini superiori ai 10€
-                                </a>
-                            </div>
                             <div class="content_middle">
-                                <a href="#">
+                                <a href="/">
 
                                     <img width="50px" src="../assets/img/pacfood-logo.png" alt="">
                                 </a>
@@ -44,7 +41,7 @@ export default {
                                 <a class="telephone d-flex text-decoration-none align-items-center" href="tel:+39335658721">
                                     <div class="icon me-3">
 
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="35" fill="currentColor"
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="25" fill="currentColor"
                                             class="bi bi-telephone-fill text-danger" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
                                                 d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
