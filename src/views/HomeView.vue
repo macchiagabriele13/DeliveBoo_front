@@ -88,10 +88,10 @@ export default {
                         <div class="pacman__food"></div>
                     </div>
                     <!-- <img height="150" src="../../public/img/pacman.png" alt="">
-                                    <span class="button_clickme ms-4 mt-4">
-                                        <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
-                                            role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                                    </span> -->
+                                                                                                                                                                                                                                                                                                                                                                                                        <span class="button_clickme ms-4 mt-4">
+                                                                                                                                                                                                                                                                                                                                                                                                            <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
+                                                                                                                                                                                                                                                                                                                                                                                                                role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
+                                                                                                                                                                                                                                                                                                                                                                                                        </span> -->
                 </div>
 
             </div>
@@ -103,11 +103,9 @@ export default {
                 <div class="row g-3 g-md-4 justify-content-center">
                     <div class="category col-6 col-md-4 col-lg-3 d-flex justify-content-center" v-for="tipo in types">
                         <div class="card_image">
-                            <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image"
-                                class="img-fluid">
+                            <img :src="'../../public/img/' + tipo.name + '.jpeg'" alt="restaurant_image" class="img-fluid">
                             <div class="card-body">
-                                <router-link :to="{ name: 'restaurants' }"
-                                    @click.preventDefault()="setSelected(tipo.name)">
+                                <router-link :to="{ name: 'restaurants' }" @click.preventDefault()="setSelected(tipo.name)">
                                     <div class="text">{{ tipo.name }}</div>
                                 </router-link>
                             </div>
@@ -255,7 +253,6 @@ button:hover:after {
 
     a {
         text-decoration: none;
-        color: $dark;
         transition: 0.2s 0.02s ease-in all;
 
     }
@@ -468,10 +465,24 @@ button:hover:after {
                 display: block;
 
                 h1 {
-                    font-size: 80px;
+                    margin: 2rem .8rem 7rem 0.2rem;
+                    background-color: $primary;
+                    padding: 2rem .5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 17px;
+                    border-radius: 5px;
+                    box-shadow: 5px 10px 0 0 $dark;
+                    transition: all 0.1s ease-in-out;
+
+
+                    &:active {
+                        transform: translate(10px, 10px);
+                        box-shadow: 0 0 0 0 $dark;
+                    }
                 }
 
-                h1,
                 p {
                     color: $primary;
                     padding: 0.5rem;
@@ -481,7 +492,7 @@ button:hover:after {
             }
 
             .pacman {
-                display: block;
+                display: none;
                 z-index: 2;
                 bottom: 0;
             }
