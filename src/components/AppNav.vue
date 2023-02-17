@@ -4,6 +4,7 @@
 
 
 
+
 import { store } from '../store.js';
 
 export default {
@@ -101,7 +102,7 @@ export default {
                                         :class="store.cart.quantity.length !== 0 ? '' : 'd-none'">
                                         <p>{{ store.cart.quantity.length }}</p>
                                     </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="$dark"
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" fill="$dark"
                                         class="bi bi-cart3 ms-1" viewBox="0 0 16 16"
                                         @click.preventDefault="store.toggleCart()">
                                         <path
