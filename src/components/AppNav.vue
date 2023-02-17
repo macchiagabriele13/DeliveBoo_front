@@ -1,4 +1,9 @@
 <script>
+
+
+
+
+
 import { store } from '../store.js';
 
 export default {
@@ -35,8 +40,7 @@ export default {
                                 </a>
                             </div>
                             <div class="d-flex">
-                                <a class="telephone d-flex text-decoration-none align-items-center"
-                                    href="tel:+39335658721">
+                                <a class="telephone d-flex text-decoration-none align-items-center" href="tel:+39335658721">
                                     <div class="icon me-3">
 
                                         <svg xmlns="http://www.w3.org/2000/svg" height="35" fill="currentColor"
@@ -91,9 +95,11 @@ export default {
                                 </div>
                             </div>
 
-                            <div class="content_right">
+                            <div class="align-items-center content_right d-flex">
                                 <a class="cart_icon" href="#">
-                                    <div class="point" :class="store.cart.quantity.length !== 0 ? '' : 'd-none'">
+                                    <div class="align-items-center d-flex justify-content-center point"
+                                        :class="store.cart.quantity.length !== 0 ? '' : 'd-none'">
+                                        <p>{{ store.cart.quantity.length }}</p>
                                     </div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="$dark"
                                         class="bi bi-cart3 ms-1" viewBox="0 0 16 16"
@@ -108,7 +114,7 @@ export default {
                 </div>
             </nav>
         </section>
-    </header>
+</header>
 </template>
 
 <style lang="scss" scoped>
@@ -117,12 +123,18 @@ export default {
 
 .point {
     position: absolute;
-    top: 0;
-    right: 0;
-    background-color: $secondary;
+    background-color: $primary;
     border-radius: 25px;
-    height: 5px;
-    width: 5px;
+    height: 20px;
+    left: 20px;
+    bottom: 15px;
+    width: 20px;
+
+
+    p {
+        color: $light;
+        font-weight: 600;
+    }
 }
 
 nav {
