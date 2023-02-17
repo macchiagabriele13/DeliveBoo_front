@@ -238,7 +238,6 @@ export default {
                 /* console.log('Tutti i dati sono inseriti nel modo corretto. Ordine salvato con successo.');
                 console.log(store.base_api_url + '/api/orders/' + localStorage.getItem('plates') + '/' + JSON.stringify(this.client)); */
                 this.sendOrder(store.base_api_url + '/api/orders/' + localStorage.getItem('plates') + '/' + JSON.stringify(this.client));
-                this.resetClientAndCart();
             }
         },
 
@@ -246,6 +245,7 @@ export default {
             axios.get(url)
                 .then(response => {
                     console.log(response);
+                    this.resetClientAndCart();
                 })
                 .catch(error => {
                     console.error(error);
@@ -458,7 +458,7 @@ export default {
                 <!-- </form> -->
             </div>
         </div>
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
