@@ -1,4 +1,10 @@
 <script>
+
+
+
+
+
+
 import { store } from '../store.js';
 
 export default {
@@ -131,7 +137,7 @@ export default {
                 </div>
             </form>
         </div>
-    </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -172,7 +178,6 @@ export default {
     position: fixed;
     right: 0;
     top: 0;
-    width: 300px;
     z-index: 5;
     /* transform: translateX(0); */
 
@@ -190,10 +195,23 @@ export default {
     box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
 }
 
+
 #CartContainer {
     height: 100%;
     overflow-y: auto;
     padding: 65px 15px 15px;
+    width: 90%;
+}
+
+@media screen and (max-width: 767px) {
+
+    #CartContainer {
+        height: 100%;
+        overflow-y: auto;
+        padding: 65px 15px 15px;
+        width: 80% !important;
+    }
+
 }
 
 .js-drawer-close.dt-sc-btn {
