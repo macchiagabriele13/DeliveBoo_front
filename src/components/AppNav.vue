@@ -115,7 +115,7 @@ export default {
                 </div>
             </nav>
         </section>
-</header>
+    </header>
 </template>
 
 <style lang="scss" scoped>
@@ -125,11 +125,11 @@ export default {
 .point {
     position: absolute;
     background-color: $primary;
-    border-radius: 25px;
-    height: 20px;
-    left: 20px;
-    bottom: 15px;
-    width: 20px;
+    border-radius: 18px;
+    padding-left: 9px;
+    padding-right: 9px;
+    left: 25px;
+    bottom: 18px;
 
 
     p {
