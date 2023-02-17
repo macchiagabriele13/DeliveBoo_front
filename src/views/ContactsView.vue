@@ -8,8 +8,7 @@ export default {
     }
 }  
 </script>
-
-<!-- banner -->
+<template><!-- banner -->
     <section id="banner_contacts">
         <div class="container-fluid bg_orange">
             <div class="container d-flex align-items-center justify-content-center justify-content-around h-100 w-100">
@@ -128,29 +127,29 @@ export default {
                                 <input type="text" name="name" id="name" v-model="name" class="form-control p-3"
                                     placeholder="Nome" aria-describedby="fullNameHelper">
                                 <!-- <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
-                        {{ error }}
-                    </p> -->
+                                                                                            {{ error }}
+                                                                                        </p> -->
                             </div>
                             <div class="mb-5">
                                 <input type="email" name="email" id="email" v-model="email" class="form-control p-3"
                                     placeholder="Email" aria-describedby="emailHelper">
                                 <!-- <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
-                        {{ error }}
-                    </p> -->
+                                                                                            {{ error }}
+                                                                                        </p> -->
                             </div>
                             <div class="mb-5">
                                 <input type="text" name="phone" id="phone" v-model="phone" class="form-control p-3"
                                     placeholder="Numero di cellulare" aria-describedby="phoneHelper">
                                 <!-- <p v-for="(error) in errors.phone" class="alert alert-danger mt-2">
-                        {{ error }}
-                    </p> -->
+                                                                                            {{ error }}
+                                                                                        </p> -->
                             </div>
                             <div class="mb-5">
                                 <textarea class="form-control p-3" name="message" id="message" v-model="message" rows="5"
                                     placeholder="Messaggio"></textarea>
                                 <!-- <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
-                        {{ error }}
-                    </p> -->
+                                                                                            {{ error }}
+                                                                                        </p> -->
                             </div>
 
                             <button type="submit" class="btn btn-dark btn-lg rounded-pill border-0 padding_custom">
@@ -167,7 +166,7 @@ export default {
                                 <h2 class="card-title">Orari di consegna</h2>
                                 <p class="card-text border-bottom border-2">Noi trasportiamo il tuo cibo entro 30
                                     minuti.</p>
-                                <h6>Lunedì - Sabato</h6>
+                                <h6 class="mt-2">Lunedì - Sabato</h6>
                                 <p class="card-text"><small>9am - 11pm</small></p>
                                 <h6>Domenica</h6>
                                 <p class="card-text"><small>11am - 7pm</small></p>
@@ -186,7 +185,7 @@ export default {
                 width="1150" height="600" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-</section>
+    </section>
 </template>
 
 <style lang="scss" scoped>
@@ -254,9 +253,29 @@ p {
     width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 340px) {
+    .card-title {
+        font-size: 1rem;
+    }
 
-    /* For Phones */
+    .card-text {
+        font-size: 0.6rem;
+    }
+
+    .card-img-overlay {
+        h6 {
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
     .bg_contacts {
         background-size: contain;
     }
@@ -341,7 +360,7 @@ p {
 
 @media only screen and (min-width: 768px) {
 
-    /* For Desktop: */
+    /* For desktop: */
     .col-1 {
         width: 8.33%;
     }
