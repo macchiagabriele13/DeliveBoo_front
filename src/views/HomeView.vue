@@ -97,7 +97,7 @@ export default {
             </div>
         </section>
         <!-- cards tipi ristorante -->
-        <section id="restaurant_cards">
+        <section id="restaurant_cards" class="my-5">
             <h1 class="text-center my-5">Esplora per categoria</h1>
             <div class="container">
                 <div class="row g-3 g-md-4 justify-content-center">
@@ -338,9 +338,9 @@ button:hover:after {
 
 
 
-#restaurant_cards {
-    padding: 4rem;
-}
+// #restaurant_cards {
+//     padding: 4rem;
+// }
 
 .category {
     .card_image {
@@ -354,11 +354,12 @@ button:hover:after {
         }
 
         .card-body {
-            display: none;
+            // display: none;
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
+            background-color: rgb(0 0 0 / 43%);
 
             a {
 
@@ -366,10 +367,10 @@ button:hover:after {
             }
         }
 
-        &:hover .card-body {
-            display: block;
-            background-color: rgb(0 0 0 / 69%);
-        }
+        // &:hover .card-body {
+        //     display: block;
+        //     ;
+        // }
     }
 
 }
@@ -381,7 +382,7 @@ button:hover:after {
     justify-content: center;
     align-items: center;
     color: $light;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
 }
 

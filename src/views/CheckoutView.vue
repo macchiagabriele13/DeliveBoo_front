@@ -236,7 +236,7 @@ export default {
             ) {
                 /* console.log('Tutti i dati sono inseriti nel modo corretto. Ordine salvato con successo.');
                 console.log(store.base_api_url + '/api/orders/' + localStorage.getItem('plates') + '/' + JSON.stringify(this.client)); */
-
+                
                 if (store.cart.quantity.length === 0) {
                     store.voidCart = true;
                 } else {
