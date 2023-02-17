@@ -213,7 +213,7 @@ export default {
             </div>
 
             <div v-else>
-                <p>Non sono presenti ristoranti</p>
+                <p class="text-center">Non sono presenti ristoranti</p>
             </div>
         </div>
     </section>
