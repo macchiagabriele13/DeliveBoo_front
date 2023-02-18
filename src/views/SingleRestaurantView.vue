@@ -1,7 +1,9 @@
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import { store } from '../store.js';
+
 import PlateList from '../components/PlateList.vue'
-import { store } from '../store'
+
 export default {
     name: 'SingleRestaurant',
     components: {
@@ -9,8 +11,7 @@ export default {
     },
     data() {
         return {
-            restaurant: [],
-            base_api_url: 'http://localhost:8000',
+            restaurant: []
         }
     },
     methods: {
@@ -18,20 +19,20 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data.results);
+                    // console.log(response.data.results);
                     this.restaurant = response.data.results;
                     this.loading = false;
                 })
                 .catch(error => {
-                    console.error(error)
-                    this.error = error.message
+                    console.error(error);
+                    this.error = error.message;
 
                 })
-        },
+        }
     },
     mounted() {
-        console.log(this.$route.params.slug)
-        this.getRestaurant(this.base_api_url + '/api/restaurants/' + this.$route.params.slug);
+        // console.log(this.$route.params.slug)
+        this.getRestaurant(store.base_api_url + '/api/restaurants/' + this.$route.params.slug);
     }
 }  
 </script>

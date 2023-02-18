@@ -1,6 +1,4 @@
 <script>
-
-
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -57,7 +55,7 @@ export default {
                     isValid: true,
                     value: '',
                     error: ''
-                },
+                }
             }
         }
     },
@@ -236,7 +234,7 @@ export default {
             ) {
                 /* console.log('Tutti i dati sono inseriti nel modo corretto. Ordine salvato con successo.');
                 console.log(store.base_api_url + '/api/orders/' + localStorage.getItem('plates') + '/' + JSON.stringify(this.client)); */
-                
+
                 if (store.cart.quantity.length === 0) {
                     store.voidCart = true;
                 } else {
@@ -248,7 +246,7 @@ export default {
         sendOrder(url) {
             axios.get(url)
                 .then(response => {
-                    console.log(response);
+                    // console.log(response);
                     this.resetClientAndCart();
                 })
                 .catch(error => {
@@ -327,8 +325,10 @@ export default {
                             <h6 class="my-0">{{ store.cart.plates.plates[i - 1] }}</h6>
                             <small class="text-muted">Quantità: {{ store.cart.quantity[i - 1] }}</small>
                         </div>
-                        <span class="text-muted">{{ store.cart.plates.prices[i - 1] * store.cart.quantity[i - 1] }}
-                            &euro;</span>
+                        <span class="text-muted">
+                            {{ (store.cart.plates.prices[i - 1] * store.cart.quantity[i - 1]).toFixed(2) }}
+                            &euro;
+                        </span>
                     </li>
 
                     <li class="list-group-item d-flex justify-content-between">

@@ -1,17 +1,11 @@
 <script>
-
-
-
-
-
-
 import { store } from '../store.js';
 
 export default {
     name: "Cart",
     data() {
         return {
-            store,
+            store
         }
     },
     methods: {
@@ -46,6 +40,7 @@ export default {
             store.cart.plates.plates = [];
             store.cart.plates.prices = [];
             store.cart.quantity = [];
+            store.cart.restaurant = 0;
             localStorage.clear();
         },
 
@@ -55,11 +50,6 @@ export default {
                 price = price + store.cart.quantity[i] * store.cart.plates.prices[i];
             }
             return price.toFixed(2);
-        }
-    },
-    mounted() {
-        if (localStorage.plates) {
-            store.cart = JSON.parse(localStorage.plates);
         }
     }
 }
@@ -137,7 +127,7 @@ export default {
                 </div>
             </form>
         </div>
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>

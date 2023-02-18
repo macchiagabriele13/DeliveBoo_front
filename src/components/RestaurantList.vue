@@ -5,10 +5,10 @@ import { store } from '../store.js';
 import RestaurantCard from './RestaurantCard.vue';
 
 export default {
-    components: {
-        RestaurantCard,
-    },
     name: 'RestaurantList',
+    components: {
+        RestaurantCard
+    },
     data() {
         return {
             store,
@@ -24,7 +24,7 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data.results);
+                    // console.log(response.data.results);
                     this.restaurants = response.data.results;
                     this.loading = false;
                     this.showPagination = true;
@@ -61,7 +61,7 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data.results);
+                    // console.log(response.data.results);
                     if (response.data.success) {
                         this.restaurants.data = response.data.results;
                         this.loading = false;
@@ -96,7 +96,7 @@ export default {
         },
 
         getImagePath(path) {
-            console.log(path);
+            // console.log(path);
             if (path) {
                 return store.base_api_url + '/storage/' + path;
             }
@@ -104,17 +104,17 @@ export default {
         },
 
         prevPage(url) {
-            console.log(url);
+            // console.log(url);
             this.getRestaurant(url);
         },
 
         nextPage(url) {
-            console.log(url);
+            // console.log(url);
             this.getRestaurant(url);
         },
 
         toPage(page) {
-            console.log(store.base_api_url + '/api/restaurants?page=' + page);
+            // console.log(store.base_api_url + '/api/restaurants?page=' + page);
             this.getRestaurants(store.base_api_url + '/api/restaurants?page=' + page);
         }
 
@@ -162,11 +162,9 @@ export default {
                     <img class="img-fluid" src="../../public/img/restaurant-icon.png" alt="">
                     Tutti i ristoranti
                 </span>
-                <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg"
-                    id="arrow-horizontal">
-                    <path transform="translate(30)"
-                        d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10"
-                        id="Path_10"></path>
+                <svg viewBox="0 0 46 16" height="10" width="25" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                        data-name="Path 10" id="Path_10"></path>
                 </svg>
             </button>
             <div class=" text-center" v-if="loading">

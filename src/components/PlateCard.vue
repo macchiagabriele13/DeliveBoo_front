@@ -8,8 +8,7 @@ export default {
     },
     data() {
         return {
-            store,
-            base_api_url: 'http://localhost:8000'
+            store
 
         }
     },
@@ -17,9 +16,9 @@ export default {
         getImagePath(path) {
             // console.log(path);
             if (path) {
-                return this.base_api_url + '/storage/' + path
+                return store.base_api_url + '/storage/' + path;
             }
-            return '/img/Food-placeholder.jpg'
+            return '/img/Food-placeholder.jpg';
         },
     }
 
@@ -37,8 +36,8 @@ export default {
                 </div>
                 <div class="card-action">
                     <h5>{{ plate.price + ' €' }}</h5>
-                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2"
-                        role="button" @click.preventDefault()="store.addToCart(plate)">Aggiungi al Carrello</button>
+                    <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" role="button"
+                        @click.preventDefault()="store.addToCart(plate)">Aggiungi al Carrello</button>
                 </div>
             </div>
         </div>

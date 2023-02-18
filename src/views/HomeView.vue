@@ -1,5 +1,4 @@
 <script>
-
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -88,10 +87,10 @@ export default {
                         <div class="pacman__food"></div>
                     </div>
                     <!-- <img height="150" src="../../public/img/pacman.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                        <span class="button_clickme ms-4 mt-4">
-                                                                                                                                                                                                                                                                                                                                                                                                            <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
-                                                                                                                                                                                                                                                                                                                                                                                                                role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                                                                                                                                                                                                                                                                                                                                                                                                        </span> -->
+                                                                                                                                                                                                                                                                                                                                                                                                            <span class="button_clickme ms-4 mt-4">
+                                                                                                                                                                                                                                                                                                                                                                                                                <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
+                                                                                                                                                                                                                                                                                                                                                                                                                    role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
+                                                                                                                                                                                                                                                                                                                                                                                                            </span> -->
                 </div>
 
             </div>
