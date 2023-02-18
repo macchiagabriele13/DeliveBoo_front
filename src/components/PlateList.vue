@@ -1,18 +1,17 @@
 <script>
 
-import axios from 'axios'
-import PlateCard from './PlateCard.vue'
+import axios from 'axios';
+
+import PlateCard from './PlateCard.vue';
 
 export default {
-    components: {
-
-        PlateCard,
-    },
     name: 'PlateList',
+    components: {
+        PlateCard
+    },
     data() {
         return {
             restaurant: [],
-            base_api_url: 'http://localhost:8000',
             error: null,
             loading: true,
         }
@@ -22,35 +21,27 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data.results);
+                    // console.log(response.data.results);
                     this.restaurant = response.data.results;
-                    this.loading = false
+                    this.loading = false;
                 })
                 .catch(error => {
-                    console.error(error)
-                    this.error = error.message
+                    console.error(error);
+                    this.error = error.message;
 
                 })
         },
         getImagePath(path) {
             // console.log(path);
             if (path) {
-                return this.base_api_url + '/storage/' + path
+                return store.base_api_url + '/storage/' + path;
             }
-            return '/img/Food-placeholder.jpg'
-        },
-        prevPage(url) {
-            console.log(url)
-            this.getPlate(url)
-        },
-        nextPage(url) {
-            console.log(url)
-            this.getPlate(url)
+            return '/img/Food-placeholder.jpg';
         }
 
     },
     mounted() {
-        this.getRestaurant(this.base_api_url + '/api/restaurants/' + this.$route.params.slug);
+        this.getRestaurant(store.base_api_url + '/api/restaurants/' + this.$route.params.slug);
     }
 }
 </script>
@@ -66,27 +57,10 @@ export default {
             </div>
             <div v-else-if="restaurant.plates && !loading">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-
-
                     <PlateCard :plate="plate" v-for="plate in restaurant.plates"></PlateCard>
-
-
-
                 </div>
 
                 <nav aria-label="Page navigation" class="d-flex justify-content-center pt-5">
-                    <!-- <ul class="pagination">
-                            <li class="page-item" v-if="restaurant.prev_page_url"
-                                @click="prevPage(restaurant.prev_page_url)">
-                                <a class="page-link" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-                                restaurant.current_page
-                            }}</a></li>
-                        </ul> -->
 
                 </nav>
 
@@ -96,7 +70,7 @@ export default {
 
             </div>
         </div>
-</section>
+    </section>
 </template>
 
 <style lang="scss" scoped>

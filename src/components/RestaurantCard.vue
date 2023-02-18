@@ -1,34 +1,23 @@
 <script>
-
-
 export default {
     name: 'RestaurantCard',
     props: {
         restaurant: Object
     },
-    data() {
-        return {
-
-            base_api_url: 'http://localhost:8000',
-
-        }
-    },
     methods: {
         getImagePath(path) {
             // console.log(path);
             if (path) {
-                return this.base_api_url + '/storage/' + path
+                return store.base_api_url + '/storage/' + path;
             }
-            return '/img/Food-placeholder.jpg'
-        },
+            return '/img/Food-placeholder.jpg';
+        }
     }
-
 }
 
 </script>
 
 <template>
-
     <div class="col">
         <div class="container d-flex justify-content-center">
             <div class="card">
@@ -60,8 +49,6 @@ export default {
             </div>
         </div>
     </div>
-
-
 </template>
 
 <style lang="scss" scoped>

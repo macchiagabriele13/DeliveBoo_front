@@ -1,21 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
-import HomeView from './views/HomeView.vue'
-import PlatesView from './views/PlatesView.vue'
-import SinglePlateView from './views/SinglePlateView.vue'
-import ContactsView from './views/ContactsView.vue'
-import NotFoundView from './views/NotFoundView.vue'
-import SingleRestaurantView from './views/SingleRestaurantView.vue'
-import RestaurantsView from './views/RestaurantsView.vue'
-import CartView from './views/CartView.vue'
-import CheckoutView from './views/CheckoutView.vue'
-import SuccessView from './views/SuccessView.vue'
+import HomeView from './views/HomeView.vue';
+import PlatesView from './views/PlatesView.vue';
+import SinglePlateView from './views/SinglePlateView.vue';
+import ContactsView from './views/ContactsView.vue';
+import NotFoundView from './views/NotFoundView.vue';
+import SingleRestaurantView from './views/SingleRestaurantView.vue';
+import RestaurantsView from './views/RestaurantsView.vue';
+import CheckoutView from './views/CheckoutView.vue';
+import SuccessView from './views/SuccessView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
     scrollBehavior() {
         return { top: 0, left: 0 }
     },
+
     routes: [
         {
             path: '/',
@@ -46,6 +46,7 @@ const router = createRouter({
             name: 'not-found',
             component: NotFoundView
         },
+
         {
             path: '/restaurants',
             name: 'restaurants',
@@ -59,22 +60,16 @@ const router = createRouter({
         },
 
         {
-            path: '/cart',
-            name: 'cart',
-            component: CartView
-        },
-        {
             path: '/checkout',
             name: 'checkout',
             component: CheckoutView
         },
+
         {
             path: '/success',
             name: 'success',
             component: SuccessView
-        },
-
-
+        }
     ]
 })
 

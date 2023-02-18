@@ -1,14 +1,4 @@
 <script>
-
-
-
-
-
-
-
-
-
-
 export default {
     name: "AppFooter",
 }
@@ -105,7 +95,7 @@ export default {
                 <p class="m-0 p-2 text-white">&copy; 2023 Boolean Team-2</p>
             </div>
         </section>
-</footer>
+    </footer>
 </template>
 
 <style lang="scss" scoped>

@@ -1,5 +1,6 @@
 <script>
 import RestaurantList from '../components/RestaurantList.vue';
+
 export default {
     name: 'Restaurants',
     components: {
