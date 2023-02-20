@@ -68,7 +68,7 @@ export const store = reactive({
             }
         }
 
-        console.log(this.cart);
+        // console.log(this.cart);
         localStorage.setItem('plates', JSON.stringify(this.cart));
     }
 })

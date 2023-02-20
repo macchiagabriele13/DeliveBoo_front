@@ -1,6 +1,6 @@
 <script>
-
 import axios from 'axios';
+import { store } from '../store.js';
 
 import PlateCard from './PlateCard.vue';
 
@@ -11,6 +11,7 @@ export default {
     },
     data() {
         return {
+            store,
             restaurant: [],
             error: null,
             loading: true,

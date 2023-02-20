@@ -79,7 +79,7 @@ export default {
 
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        {{ store.cart.plates.prices[i] }} &euro;
+                                        {{ store.cart.plates.prices[i].toFixed(2) }} &euro;
                                     </div>
 
                                     <div class="d-flex gap-1 align-items-center">

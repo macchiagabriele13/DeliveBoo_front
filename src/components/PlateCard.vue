@@ -35,7 +35,7 @@ export default {
                     <p class="text-body">{{ plate.description }}</p>
                 </div>
                 <div class="card-action">
-                    <h5>{{ plate.price + ' €' }}</h5>
+                    <h5>{{ plate.price.toFixed(2) + ' €' }}</h5>
                     <button name="" id="" class="btn btn-warning rounded-pill text-white padding_custom mb-2" role="button"
                         @click.preventDefault()="store.addToCart(plate)">Aggiungi al Carrello</button>
                 </div>

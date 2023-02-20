@@ -105,12 +105,12 @@ export default {
 
         prevPage(url) {
             // console.log(url);
-            this.getRestaurant(url);
+            this.getRestaurants(url);
         },
 
         nextPage(url) {
             // console.log(url);
-            this.getRestaurant(url);
+            this.getRestaurants(url);
         },
 
         toPage(page) {
@@ -190,13 +190,13 @@ export default {
                         <li class="page-item active" aria-current="page" v-if="restaurants.last_page <= 3"
                             v-for="i in restaurants.last_page">
                             <button class="page-link" href="#" @click="toPage(i)">
-                                {{ restaurants.current_page }}
+                                {{ i }}
                             </button>
                         </li>
 
                         <li class="page-item active" aria-current="page" v-else v-for="i in 3">
                             <button class="page-link" href="#" @click="toPage(i)">
-                                {{ restaurants.current_page }}
+                                {{ i }}
                             </button>
                         </li>
 

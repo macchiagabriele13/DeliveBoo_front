@@ -1,8 +1,15 @@
 <script>
+import { store } from '../store.js';
+
 export default {
     name: 'RestaurantCard',
     props: {
         restaurant: Object
+    },
+    data() {
+        return {
+            store
+        }
     },
     methods: {
         getImagePath(path) {
@@ -30,7 +37,7 @@ export default {
 
                         <h2><strong>{{ restaurant.company_name }}</strong></h2>
                         <div class="size my-3 restaurant-description">
-                            <h3>{{ restaurant.description }}</h3>
+                            <!-- <h3>{{ restaurant.description }}</h3> -->
                         </div>
                         <div class="color mb-4">
                             <h3 class="m-0">Tipologia :</h3>
