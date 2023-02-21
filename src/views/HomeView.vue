@@ -1,18 +1,5 @@
 <script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -69,9 +56,9 @@ export default {
                                     </a>
                                     <p>
                                         Ordina online dai tuoi ristoranti preferiti
-                                    </p>
-                                </div>
-                            </button>
+                                </p>
+                            </div>
+                        </button>
 
                             <div class="title_small_banner">
                                 <a href="#restaurant_cards">
@@ -101,10 +88,10 @@ export default {
                         <div class="pacman__food"></div>
                     </div>
                     <!-- <img height="150" src="../../public/img/pacman.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span class="button_clickme ms-4 mt-4">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </span> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="button_clickme ms-4 mt-4">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </span> -->
                 </div>
 
             </div>
@@ -127,7 +114,7 @@ export default {
                 </div>
             </div>
         </section>
-</main>
+    </main>
 </template>
 
 <style lang="scss" scoped>
@@ -483,15 +470,15 @@ button:hover:after {
                 }
 
                 h1 {
-                    margin: 2rem .8rem 2rem 0.2rem;
-                    background-color: $primary;
+                    margin: 2rem 0.8rem 2rem 0.2rem;
+                    background-color: #f5a606;
                     padding: 2rem 1.5rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-size: 17px;
+                    font-size: 35px;
                     border-radius: 5px;
-                    box-shadow: 5px 10px 0 0 $dark;
+                    box-shadow: 3px 10px 30px 1px #221613a8;
                     transition: all 0.1s ease-in-out;
 
 
