@@ -6,6 +6,13 @@
 
 
 
+
+
+
+
+
+
+
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -94,10 +101,10 @@ export default {
                         <div class="pacman__food"></div>
                     </div>
                     <!-- <img height="150" src="../../public/img/pacman.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="button_clickme ms-4 mt-4">
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                        </span> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span class="button_clickme ms-4 mt-4">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </span> -->
                 </div>
 
             </div>
@@ -532,9 +539,9 @@ button:hover:after {
 }
 
 
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1024px) and (min-width: 769px) {
     #home {
-        background-position: right bottom;
+        background-position: right;
     }
 
     #home .container-fluid {
@@ -544,7 +551,7 @@ button:hover:after {
     }
 
     .home-banner {
-        margin-top: 6rem;
+        margin-top: 3rem;
     }
 
     .btn_title {
@@ -554,6 +561,58 @@ button:hover:after {
     .title_small_banner {
         display: block;
         text-align: center;
+
+        h1 {
+            font-size: 80px;
+        }
+
+        h1,
+        p {
+            color: $primary;
+        }
+
+        p {
+            font-size: 25px;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .title {
+        h1 {
+            font-size: 60px;
+        }
+    }
+
+    .row {
+        .category .card_image {
+            img {
+                height: 250px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+
+    #home {
+        background-position: inherit;
+    }
+
+    .home-banner {
+        margin-top: 2rem;
+        align-items: start;
+    }
+
+    .btn_title {
+        display: none;
+    }
+
+    .title_small_banner {
+        display: block;
 
         h1 {
             font-size: 80px;
