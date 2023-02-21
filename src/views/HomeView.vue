@@ -1,4 +1,11 @@
 <script>
+
+
+
+
+
+
+
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -87,10 +94,10 @@ export default {
                         <div class="pacman__food"></div>
                     </div>
                     <!-- <img height="150" src="../../public/img/pacman.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                            <span class="button_clickme ms-4 mt-4">
-                                                                                                                                                                                                                                                                                                                                                                                                                <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
-                                                                                                                                                                                                                                                                                                                                                                                                                    role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
-                                                                                                                                                                                                                                                                                                                                                                                                            </span> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="button_clickme ms-4 mt-4">
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <a name="" id="" class="btn btn-danger align-top mt-4 ms-4 rounded-circle p-4" href="#"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                role="button"><img height="20" src="../../public/img/hamburger.png" alt=""></a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                        </span> -->
                 </div>
 
             </div>
@@ -113,7 +120,7 @@ export default {
                 </div>
             </div>
         </section>
-    </main>
+</main>
 </template>
 
 <style lang="scss" scoped>
@@ -463,10 +470,15 @@ button:hover:after {
             .title_small {
                 display: block;
 
+                a {
+                    display: flex;
+                    justify-content: center;
+                }
+
                 h1 {
-                    margin: 2rem .8rem 7rem 0.2rem;
+                    margin: 2rem .8rem 2rem 0.2rem;
                     background-color: $primary;
-                    padding: 2rem .5rem;
+                    padding: 2rem 1.5rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
