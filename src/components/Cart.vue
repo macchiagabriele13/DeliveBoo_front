@@ -1,4 +1,6 @@
 <script>
+
+
 import { store } from '../store.js';
 
 export default {
@@ -127,7 +129,7 @@ export default {
                 </div>
             </form>
         </div>
-    </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -195,11 +197,15 @@ export default {
 
 @media screen and (max-width: 767px) {
 
+    #CartDrawer {
+        width: 80% !important;
+    }
+
     #CartContainer {
         height: 100%;
         overflow-y: auto;
         padding: 65px 15px 15px;
-        width: 80% !important;
+
     }
 
 }
