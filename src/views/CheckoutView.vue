@@ -46,7 +46,7 @@ export default {
                 card_expiration: {
                     isValid: true,
                     value: {
-                        month: 1,
+                        month: 3,
                         year: 23
                     },
                     error: ''
@@ -223,8 +223,13 @@ export default {
                 this.client.card_expiration.isValid = false;
                 this.client.card_expiration.error = 'La data di scadenza della carta non è nel formato corretto.';
             } else {
-                this.client.card_expiration.isValid = true;
-                this.client.card_expiration.error = '';
+                if (this.client.card_expiration.value.year === 23 && this.client.card_expiration.value.month < 3) {
+                    this.client.card_expiration.isValid = false;
+                    this.client.card_expiration.error = 'La tua carta è scaduta o hai inserito la data errata.';
+                } else {
+                    this.client.card_expiration.isValid = true;
+                    this.client.card_expiration.error = '';
+                }
             }
 
             if (
@@ -429,22 +434,22 @@ export default {
 
                         <div>
                             <select id="card_expiration_month" class="form-control"
+                                :class="client.card_cvv.isValid ? '' : 'invalid'"
                                 v-model="client.card_expiration.value.month" required>
                                 <option :value="i" v-for="i in 12">{{ i }}</option>
                             </select>
-                            <div class="text-danger" v-if="!client.card_expiration.isValid">
-                                {{ client.card_expiration.error }}
-                            </div>
                         </div>
 
                         <div>
                             <select id="card_expiration_year" class="form-control"
+                                :class="client.card_cvv.isValid ? '' : 'invalid'"
                                 v-model="client.card_expiration.value.year" required>
                                 <option :value="i + 22" v-for="i in 20">{{ i + 22 }}</option>
                             </select>
-                            <div class="text-danger" v-if="!client.card_expiration.isValid">
-                                {{ client.card_expiration.error }}
-                            </div>
+                        </div>
+
+                        <div class="text-danger" v-if="!client.card_expiration.isValid">
+                            {{ client.card_expiration.error }}
                         </div>
                     </div>
 
