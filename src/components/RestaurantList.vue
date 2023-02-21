@@ -237,7 +237,6 @@ export default {
 
 
 
-
 .container {
     .row {
         margin-bottom: 5rem;
