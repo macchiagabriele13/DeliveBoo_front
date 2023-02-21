@@ -1,4 +1,5 @@
 <script>
+
 import axios from 'axios';
 import { store } from '../store.js';
 
@@ -51,7 +52,7 @@ export default {
             </div>
         </div>
     </section>
-    <PlateList />
+<PlateList />
 </template>
 
 <style lang="scss" scoped>
@@ -78,6 +79,7 @@ export default {
 @media screen and (max-width: 767px) {
     .container {
         flex-direction: column;
+        padding: 1.5rem !important;
 
         h1 {
             font-size: 2rem;

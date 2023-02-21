@@ -1,4 +1,7 @@
 <script>
+
+
+
 import { store } from '../store.js';
 
 export default {
@@ -55,7 +58,7 @@ export default {
                 </div>
             </div>
         </div>
-    </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -229,11 +232,10 @@ export default {
     line-height: 26px;
     font-size: 14px;
     display: inline-block;
-    color: #111;
+    color: white;
     background: #fff;
     margin: 0 5px;
     transition: 0.5s;
-    color: #111;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -272,7 +274,7 @@ export default {
 // #########################################
 
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:426px) {
     .container .card {
         position: relative;
         width: 320px;
@@ -317,7 +319,7 @@ export default {
 
     .container .card .contentBx {
         position: absolute;
-        bottom: 50px;
+        bottom: 22%;
         width: 100%;
         height: 100px;
         text-align: center;
@@ -365,11 +367,10 @@ export default {
         line-height: 26px;
         font-size: 14px;
         display: inline-block;
-        color: #111;
+        color: white;
         background: #fff;
         margin: 0 5px;
         // transition: 0.5s;
-        color: #111;
         border-radius: 4px;
         cursor: pointer;
     }
